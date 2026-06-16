@@ -3,67 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>TuVecindad | Frutería Boutique Local y Orgánica</title>
-    <meta name="description" content="TuVecindad es tu frutería local de confianza. Ofrecemos las frutas más frescas, orgánicas y seleccionadas directo de productores locales a tu mesa. ¡Haz tu pedido por WhatsApp!">
-    <meta name="keywords" content="frutas frescas, frutería, orgánico, comida saludable, delivery de frutas, TuVecindad, batidos, frutas a domicilio">
-    <meta name="author" content="TuVecindad">
-    <link rel="canonical" href="https://tuvecindad-frutas.com">
 
-    <!-- Open Graph / Facebook -->
+    <title>TechZone | Accesorios de Tecnología Premium</title>
+    <meta name="description" content="TechZone — Tu tienda de accesorios tecnológicos de calidad. Auriculares, cargadores, fundas, cables y más. Envío rápido y garantía en todos los productos.">
+    <meta name="keywords" content="accesorios tecnología, auriculares, cargadores, fundas celular, cables USB, mouse, teclado, TechZone">
+    <meta name="author" content="TechZone">
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="TuVecindad | Frutas Frescas y Orgánicas">
-    <meta property="og:description" content="Las mejores frutas directo a tu mesa. Explora nuestro catálogo y ordena de forma rápida y personalizada.">
+    <meta property="og:title" content="TechZone | Accesorios Tech Premium">
+    <meta property="og:description" content="Los mejores accesorios tecnológicos al mejor precio. Calidad garantizada.">
     <meta property="og:image" content="./assets/hero.png">
 
-    <!-- Premium Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome for Premium Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-theme">
-    
-    <!-- Toast Notification Container -->
+
+    <!-- Toast Notifications -->
     <div id="toast-container" class="toast-container"></div>
 
-    <!-- Floating Navigation Bar -->
-    <header class="navbar">
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo-wrapper">
-                <img src="./assets/logo.png" alt="TuVecindad Logo" class="logo-img">
-                <span class="logo-text">Tu<span class="highlight">Vecindad</span></span>
+            <a href="#hero" class="logo-wrapper">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span class="logo-text">Tech<span class="accent-text">Zone</span></span>
             </a>
 
-            <!-- Mobile Nav Toggle -->
-            <button class="mobile-toggle" aria-label="Abrir menú" id="mobile-toggle">
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Nav Links -->
             <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="#hero" class="nav-link active">Inicio</a></li>
                     <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
-                    <li><a href="#licuadora" class="nav-link">Fruti-Creador</a></li>
-                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                    <li><a href="#features" class="nav-link">Beneficios</a></li>
+                    <li><a href="#testimonios" class="nav-link">Opiniones</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
 
-            <!-- Actions (Theme + Cart) -->
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-btn" aria-label="Cambiar tema">
+                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button id="cart-toggle-btn" class="cart-btn" aria-label="Ver carrito">
-                    <i class="fa-solid fa-basket-shopping"></i>
+                <button id="cart-toggle-btn" class="icon-btn cart-btn" aria-label="Ver carrito">
+                    <i class="fa-solid fa-bag-shopping"></i>
                     <span class="cart-badge" id="cart-badge">0</span>
                 </button>
             </div>
@@ -73,55 +67,67 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <div class="hero-bg-overlay"></div>
+            <div class="hero-bg">
+                <div class="hero-grid-overlay"></div>
+                <div class="hero-glow glow-1"></div>
+                <div class="hero-glow glow-2"></div>
+            </div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <span class="badge-accent"><i class="fa-solid fa-leaf"></i> 100% Frescura Local</span>
-                    <h1>Las frutas más vivas directo a <span class="serif-title">tu mesa</span></h1>
-                    <p class="hero-lead">Seleccionamos cada fruta con amor en la vecindad. Frescura insuperable, sabor auténtico y nutrición garantizada para tu familia.</p>
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Envío gratis en pedidos +$50
+                    </div>
+                    <h1>Tecnología que <span class="gradient-text">eleva</span> tu experiencia</h1>
+                    <p class="hero-lead">Accesorios premium para todos tus dispositivos. Diseño, calidad y garantía en cada producto que elegís.</p>
                     <div class="hero-ctas">
                         <a href="#catalogo" class="btn btn-primary">
-                            <span class="btn-text">Ver Catálogo</span>
-                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                            <i class="fa-solid fa-store"></i> Ver Productos
                         </a>
-                        <a href="#licuadora" class="btn btn-secondary">
-                            <span class="btn-text">Crear Batido</span>
-                            <span class="btn-icon"><i class="fa-solid fa-blender"></i></span>
+                        <a href="#features" class="btn btn-ghost">
+                            <i class="fa-solid fa-shield-check"></i> Garantía Total
                         </a>
                     </div>
-                    <div class="hero-features">
-                        <div class="hero-feature">
-                            <i class="fa-solid fa-truck-fast"></i>
-                            <span>Envío Rápido</span>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">+5K</span>
+                            <span class="stat-label">Clientes felices</span>
                         </div>
-                        <div class="hero-feature">
-                            <i class="fa-solid fa-award"></i>
-                            <span>100% Orgánico</span>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Productos</span>
                         </div>
-                        <div class="hero-feature">
-                            <i class="fa-solid fa-handshake"></i>
-                            <span>Trato Directo</span>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">4.9★</span>
+                            <span class="stat-label">Calificación</span>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image-wrapper">
-                    <div class="blob-bg"></div>
-                    <div class="image-card">
-                        <img src="./assets/hero.png" alt="Canasta de frutas frescas de TuVecindad" class="hero-img">
-                        <div class="floating-badge fb-1">
-                            <span class="emoji">🍎</span>
-                            <div>
-                                <h4>Manzana Fuji</h4>
-                                <p>Súper crocante</p>
+                <div class="hero-visual">
+                    <div class="visual-card main-card">
+                        <div class="card-glow"></div>
+                        <div class="product-showcase">
+                            <div class="showcase-icon">🎧</div>
+                            <div class="showcase-info">
+                                <h4>AirPods Pro 2</h4>
+                                <p>Cancelación de ruido activa</p>
+                                <span class="showcase-price">$89.99</span>
                             </div>
                         </div>
-                        <div class="floating-badge fb-2">
-                            <span class="emoji">🥝</span>
-                            <div>
-                                <h4>Kiwi Orgánico</h4>
-                                <p>Vitamina C pura</p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="visual-card mini-card card-left">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Carga Rápida 65W</span>
+                    </div>
+                    <div class="visual-card mini-card card-right">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Top Ventas</span>
+                    </div>
+                    <div class="visual-card mini-card card-bottom">
+                        <i class="fa-solid fa-shield-check"></i>
+                        <span>12 meses garantía</span>
                     </div>
                 </div>
             </div>
@@ -129,177 +135,157 @@
 
         <!-- Catalog Section -->
         <section id="catalogo" class="catalog-section">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Nuestra Selección</span>
-                <h2>Explora el <span class="serif-title">Fruti-Catálogo</span></h2>
-                <p>Elige por unidad o por kilo. Frutas de temporada cosechadas en su punto ideal de madurez.</p>
+            <div class="section-header">
+                <span class="section-tag">Nuestro Catálogo</span>
+                <h2>Explora todos los <span class="gradient-text">accesorios</span></h2>
+                <p>Filtrá por categoría o buscá el accesorio que necesitás para tu dispositivo.</p>
             </div>
 
-            <!-- Search and Filter Controls -->
             <div class="catalog-controls">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="catalog-search" placeholder="Busca tu fruta favorita (ej. Mango, Fresa...)">
+                    <input type="text" id="catalog-search" placeholder="Buscar productos (ej. auriculares, cable...)">
                 </div>
                 <div class="category-filters" id="category-filters">
-                    <button class="filter-chip active" data-category="all">Todas</button>
-                    <button class="filter-chip" data-category="tropical">Tropicales</button>
-                    <button class="filter-chip" data-category="citrus">Cítricos</button>
-                    <button class="filter-chip" data-category="berries">Bayas / Berries</button>
-                    <button class="filter-chip" data-category="melons">Melones y Sandías</button>
-                    <button class="filter-chip" data-category="sweet">Dulces Clásicas</button>
+                    <button class="filter-chip active" data-category="all">
+                        <i class="fa-solid fa-th-large"></i> Todos
+                    </button>
+                    <button class="filter-chip" data-category="audio">
+                        <i class="fa-solid fa-headphones"></i> Audio
+                    </button>
+                    <button class="filter-chip" data-category="carga">
+                        <i class="fa-solid fa-bolt"></i> Carga
+                    </button>
+                    <button class="filter-chip" data-category="proteccion">
+                        <i class="fa-solid fa-mobile-screen"></i> Protección
+                    </button>
+                    <button class="filter-chip" data-category="conectividad">
+                        <i class="fa-solid fa-plug"></i> Conectividad
+                    </button>
+                    <button class="filter-chip" data-category="gaming">
+                        <i class="fa-solid fa-gamepad"></i> Gaming
+                    </button>
                 </div>
             </div>
 
-            <!-- Grid of Products -->
             <div class="products-grid" id="products-grid">
-                <!-- Javascript will render cards here -->
+                <!-- JS renderiza las cards aquí -->
             </div>
         </section>
 
-        <!-- Smoothie Creator (Virtual Blender) Section -->
-        <section id="licuadora" class="blender-section">
-            <div class="blender-bg-decoration"></div>
-            <div class="blender-container">
-                <div class="blender-info">
-                    <span class="badge-accent"><i class="fa-solid fa-wand-magic-sparkles"></i> Herramienta Interactiva</span>
-                    <h2>El Fruti-Creador de <span class="serif-title">Batidos</span></h2>
-                    <p>¡Combina tus frutas preferidas de la vecindad! Selecciona hasta 3 frutas para agregarlas a la licuadora. Mira cómo cambian los valores nutricionales en tiempo real y obtén la receta perfecta.</p>
-                    
-                    <!-- Nutrient Indicators -->
-                    <div class="nutrition-dashboard">
-                        <div class="nutrient-bar-group">
-                            <div class="nutrient-header">
-                                <span>Vitamina C (Defensas)</span>
-                                <span id="vit-c-val">0%</span>
-                            </div>
-                            <div class="progress-bar-bg">
-                                <div class="progress-bar-fill fill-vit-c" id="vit-c-bar" style="width: 0%"></div>
-                            </div>
-                        </div>
-                        <div class="nutrient-bar-group">
-                            <div class="nutrient-header">
-                                <span>Energía y Antioxidantes</span>
-                                <span id="energy-val">0%</span>
-                            </div>
-                            <div class="progress-bar-bg">
-                                <div class="progress-bar-fill fill-energy" id="energy-bar" style="width: 0%"></div>
-                            </div>
-                        </div>
-                        <div class="nutrient-bar-group">
-                            <div class="nutrient-header">
-                                <span>Fibra y Digestión</span>
-                                <span id="fiber-val">0%</span>
-                            </div>
-                            <div class="progress-bar-bg">
-                                <div class="progress-bar-fill fill-fiber" id="fiber-bar" style="width: 0%"></div>
-                            </div>
-                        </div>
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <span class="section-tag">¿Por qué TechZone?</span>
+                <h2>Todo lo que necesitás, <span class="gradient-text">garantizado</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-truck-fast"></i>
                     </div>
-
-                    <!-- Smoothie Recipe Card -->
-                    <div class="smoothie-recipe-card" id="smoothie-recipe-card">
-                        <div class="recipe-empty" id="recipe-empty">
-                            <i class="fa-solid fa-hand-holding-hand"></i>
-                            <p>Agrega frutas desde el panel derecho para empezar a preparar tu batido.</p>
-                        </div>
-                        <div class="recipe-content hidden" id="recipe-content">
-                            <h4 id="recipe-title">Batido Inmuno-Energizante</h4>
-                            <p id="recipe-desc">Una deliciosa y refrescante mezcla rica en antioxidantes.</p>
-                            <div class="recipe-actions">
-                                <button class="btn btn-sm btn-outline-white" id="btn-add-smoothie-cart">
-                                    <i class="fa-solid fa-cart-plus"></i> Comprar este Combo
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Envío Ultrarrápido</h3>
+                    <p>Recibí tu pedido en 24-48 horas. Gratis en compras mayores a $50.</p>
                 </div>
-
-                <!-- Blender Graphic Interface -->
-                <div class="blender-interactive">
-                    <div class="fruits-selector">
-                        <h3>Elige tus Ingredientes</h3>
-                        <div class="fruits-selector-grid" id="blender-ingredients-pool">
-                            <!-- JS populated list of fruits with plus buttons -->
-                        </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-shield-check"></i>
                     </div>
-
-                    <div class="blender-visualizer">
-                        <!-- Glassmorphism Blender Container -->
-                        <div class="blender-device" id="blender-device">
-                            <div class="blender-lid"></div>
-                            <div class="blender-jar">
-                                <div class="blender-liquid" id="blender-liquid"></div>
-                                <div class="blender-blades" id="blender-blades">
-                                    <i class="fa-solid fa-fan"></i>
-                                </div>
-                                <div class="blender-inside-fruits" id="blender-inside-fruits">
-                                    <!-- Fruit elements will render inside here -->
-                                </div>
-                            </div>
-                            <div class="blender-base">
-                                <div class="blender-switch" id="btn-blend">
-                                    <span>LICUAR</span>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btn-secondary btn-sm" id="btn-reset-blender">
-                            <i class="fa-solid fa-rotate-left"></i> Limpiar Licuadora
-                        </button>
+                    <h3>Garantía de 12 meses</h3>
+                    <p>Todos nuestros productos tienen garantía oficial. Si falla, lo reemplazamos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-rotate-left"></i>
                     </div>
+                    <h3>Devolución Fácil</h3>
+                    <p>30 días para devolver sin preguntas. Tu satisfacción es nuestra prioridad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3>Pago 100% Seguro</h3>
+                    <p>Procesamos tus pagos con encriptación SSL. Tus datos siempre protegidos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo está disponible en todo momento para ayudarte.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Marcas Oficiales</h3>
+                    <p>Solo trabajamos con distribuidores oficiales. Cero productos genéricos.</p>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials Section -->
         <section id="testimonios" class="testimonials-section">
-            <div class="section-header text-center">
-                <span class="section-subtitle">Vecinos Felices</span>
-                <h2>¿Qué dicen en <span class="serif-title">la vecindad?</span></h2>
-                <p>Nuestros clientes son nuestros vecinos. Esto es lo que opinan sobre la calidad de nuestras frutas.</p>
+            <div class="section-header">
+                <span class="section-tag">Clientes</span>
+                <h2>Lo que dicen nuestros <span class="gradient-text">compradores</span></h2>
             </div>
-
             <div class="slider-wrapper">
                 <div class="testimonial-slider" id="testimonial-slider">
-                    <!-- Carousel elements -->
                     <div class="testimonial-card active">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">"¡Las paltas y los mangos son de otro planeta! Siempre llegan en el punto de maduración exacto que les pido. El pedido por WhatsApp es súper rápido y me atiende Juan con la mejor onda."</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Compré unos auriculares inalámbricos y la calidad es increíble. El envío llegó al día siguiente y el empaque estaba perfecto. Totalmente recomendado."</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"><span class="avatar-letter">M</span></div>
-                            <div class="author-details">
-                                <h4>Doña Marta Gómez</h4>
-                                <p>Vecina desde hace 5 años</p>
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)">J</div>
+                            <div>
+                                <h4>Juliana Torres</h4>
+                                <p>Cliente verificada</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">"Preparo batidos todas las mañanas para mis hijos. La frescura de las fresas y los kiwis es impecable. El Fruti-Creador de batidos de su web me dio ideas increíbles de mezclas."</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Pedí un cargador de 65W y una funda para mi celular. Llegaron rapidísimo y la calidad es top. El precio es mucho mejor que en otras tiendas."</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"><span class="avatar-letter">C</span></div>
-                            <div class="author-details">
-                                <h4>Carlos Ramírez</h4>
-                                <p>Cliente Frecuente</p>
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #0284c7)">M</div>
+                            <div>
+                                <h4>Matías Gómez</h4>
+                                <p>Cliente verificado</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                        <p class="testimonial-text">"La mejor calidad y precios justos. Me encanta que apoyen a productores locales y que sus empaques sean ecológicos. ¡100% recomendados!"</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"El mouse gaming que compré es una bestia. Perfecto para jugar toda la noche. La atención al cliente también fue excelente cuando tuve una consulta."</p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"><span class="avatar-letter">V</span></div>
-                            <div class="author-details">
-                                <h4>Valeria Espinoza</h4>
-                                <p>Amante de la vida saludable</p>
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">R</div>
+                            <div>
+                                <h4>Rodrigo Herrera</h4>
+                                <p>Cliente verificado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testimonial-text">"Increíble servicio. Compré un teclado mecánico y llegó en perfectas condiciones. La garantía de 12 meses me da mucha tranquilidad. ¡Vuelvo a comprar!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">S</div>
+                            <div>
+                                <h4>Sofía Ramírez</h4>
+                                <p>Cliente verificada</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="slider-controls">
-                    <button id="slider-prev" class="slider-arrow" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="slider-prev" class="slider-arrow" aria-label="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
                     <div class="slider-dots" id="slider-dots"></div>
-                    <button id="slider-next" class="slider-arrow" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button id="slider-next" class="slider-arrow" aria-label="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -308,67 +294,63 @@
         <section id="contacto" class="contact-section">
             <div class="contact-container">
                 <div class="contact-info-panel">
-                    <span class="badge-accent"><i class="fa-solid fa-store"></i> Visítanos</span>
-                    <h2>Ubicación y <span class="serif-title">Horarios</span></h2>
-                    <p class="panel-lead">Ven a conocernos y a sentir el aroma de nuestras frutas frescas directamente en nuestro local de la vecindad.</p>
-                    
-                    <div class="info-list">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                            <div class="info-text">
+                    <span class="section-tag">Contacto</span>
+                    <h2>¿Tenés alguna <span class="gradient-text">consulta?</span></h2>
+                    <p>Estamos disponibles para ayudarte a elegir el mejor accesorio para tu dispositivo.</p>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
                                 <h4>Dirección</h4>
-                                <p>Av. Frescura Verde 452, La Vecindad</p>
+                                <p>Av. Tecnología 1024, Ciudad</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
-                            <div class="info-text">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
                                 <h4>Horario</h4>
-                                <p>Lunes a Sábado: 8:00 AM - 8:00 PM<br>Domingos: 9:00 AM - 2:00 PM</p>
+                                <p>Lun–Sáb: 9:00 AM – 8:00 PM</p>
                             </div>
                         </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                            <div class="info-text">
-                                <h4>Teléfono & WhatsApp</h4>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div>
+                                <h4>WhatsApp</h4>
                                 <p>+51 987 654 321</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="social-links">
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://whatsapp.com" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
-
-                <!-- Contact Form Panel -->
                 <div class="contact-form-panel">
-                    <h3>¿Alguna duda o pedido especial?</h3>
-                    <p>Déjanos un mensaje y te responderemos en minutos.</p>
+                    <h3>Envianos un mensaje</h3>
+                    <p>Respondemos en menos de 2 horas en horario comercial.</p>
                     <form id="contact-form" class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-name">Nombre</label>
-                                <input type="text" id="form-name" required placeholder="Tu nombre">
+                                <input type="text" id="form-name" required placeholder="Tu nombre completo">
                             </div>
                             <div class="form-group">
-                                <label for="form-phone">Teléfono</label>
-                                <input type="tel" id="form-phone" required placeholder="Tu número de celular">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" required placeholder="tu@email.com">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="form-email">Email (Opcional)</label>
-                            <input type="email" id="form-email" placeholder="tu@correo.com">
+                            <label for="form-subject">Asunto</label>
+                            <input type="text" id="form-subject" placeholder="¿En qué podemos ayudarte?">
                         </div>
                         <div class="form-group">
                             <label for="form-message">Mensaje</label>
-                            <textarea id="form-message" rows="4" required placeholder="¿En qué te podemos ayudar?"></textarea>
+                            <textarea id="form-message" rows="4" required placeholder="Escribí tu consulta aquí..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
-                            <span class="btn-text">Enviar Mensaje</span>
-                            <span class="btn-icon"><i class="fa-regular fa-paper-plane"></i></span>
+                            <i class="fa-regular fa-paper-plane"></i> Enviar Mensaje
                         </button>
                     </form>
                 </div>
@@ -376,70 +358,61 @@
         </section>
     </main>
 
-    <!-- Shopping Cart Drawer (Slide out) -->
-    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-drawer" id="cart-drawer">
-        <div class="cart-drawer-header">
-            <h3><i class="fa-solid fa-basket-shopping"></i> Tu Carrito</h3>
-            <button class="close-cart-btn" id="close-cart-btn" aria-label="Cerrar carrito">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Mi Carrito</h3>
+            <button class="close-cart-btn" id="close-cart-btn" aria-label="Cerrar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-
-        <!-- Cart items list -->
-        <div class="cart-drawer-body">
+        <div class="cart-body">
             <div class="cart-empty" id="cart-empty">
-                <i class="fa-solid fa-basket-shopping"></i>
+                <div class="cart-empty-icon">🛍️</div>
                 <p>Tu carrito está vacío</p>
-                <a href="#catalogo" class="btn btn-secondary btn-sm" id="btn-cart-shop-now">Explorar Frutas</a>
+                <a href="#catalogo" class="btn btn-primary btn-sm" id="btn-cart-shop">Ver productos</a>
             </div>
-            <div class="cart-items" id="cart-items">
-                <!-- Javascript will render item lines here -->
-            </div>
+            <div class="cart-items" id="cart-items"></div>
         </div>
-
-        <!-- Checkout Form & Totals -->
-        <div class="cart-drawer-footer" id="cart-drawer-footer">
+        <div class="cart-footer" id="cart-footer">
             <div class="cart-summary">
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span id="cart-subtotal">S/ 0.00</span>
+                    <span id="cart-subtotal">$0.00</span>
                 </div>
-                <div class="summary-row promo-applied hidden" id="promo-row">
-                    <span>Descuento Vecino (10%)</span>
-                    <span id="cart-discount">- S/ 0.00</span>
+                <div class="summary-row promo-row hidden" id="promo-row">
+                    <span>Descuento (15%)</span>
+                    <span id="cart-discount">-$0.00</span>
                 </div>
                 <div class="summary-row total-row">
-                    <span>Total Estimado</span>
-                    <span id="cart-total">S/ 0.00</span>
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
                 </div>
             </div>
-
-            <!-- Coupon Input -->
-            <div class="promo-code-container">
-                <input type="text" id="promo-code-input" placeholder="Código de descuento (ej: VECINO10)">
-                <button class="btn btn-sm btn-outline" id="btn-apply-promo">Aplicar</button>
+            <div class="promo-container">
+                <input type="text" id="promo-input" placeholder="Código de descuento (TECH15)">
+                <button class="btn btn-outline btn-sm" id="btn-apply-promo">Aplicar</button>
             </div>
-
-            <div class="checkout-details-form">
-                <h4>Detalles de Entrega</h4>
+            <div class="checkout-form">
+                <h4>Datos de entrega</h4>
                 <div class="form-group">
                     <input type="text" id="checkout-name" placeholder="Nombre completo" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" id="checkout-address" placeholder="Dirección de entrega en la vecindad" required>
+                    <input type="text" id="checkout-address" placeholder="Dirección de entrega" required>
                 </div>
                 <div class="form-group">
                     <select id="checkout-payment">
-                        <option value="Yape / Plin">Yape / Plin</option>
+                        <option value="Tarjeta de crédito/débito">Tarjeta de crédito/débito</option>
+                        <option value="Transferencia bancaria">Transferencia bancaria</option>
                         <option value="Efectivo contra-entrega">Efectivo contra-entrega</option>
-                        <option value="Tarjeta de Crédito/Débito">Tarjeta POS en entrega</option>
+                        <option value="PayPal">PayPal</option>
                     </select>
                 </div>
             </div>
-
-            <button class="btn btn-primary btn-block checkout-submit-btn" id="btn-checkout-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> Realizar Pedido por WhatsApp
+            <button class="btn btn-whatsapp btn-block" id="btn-checkout">
+                <i class="fa-brands fa-whatsapp"></i> Finalizar pedido por WhatsApp
             </button>
         </div>
     </div>
@@ -449,35 +422,43 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="logo-wrapper">
-                    <img src="./assets/logo.png" alt="TuVecindad Logo" class="logo-img">
-                    <span class="logo-text">Tu<span class="highlight">Vecindad</span></span>
+                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <span class="logo-text">Tech<span class="accent-text">Zone</span></span>
                 </div>
-                <p>Tu frutería de confianza en la vecindad. Frutas seleccionadas de alta calidad, promoviendo la salud y el comercio local justo.</p>
+                <p>Tu tienda de accesorios tecnológicos de confianza. Calidad premium, envío rápido y garantía en cada compra.</p>
+                <div class="payment-methods">
+                    <span><i class="fa-brands fa-cc-visa"></i></span>
+                    <span><i class="fa-brands fa-cc-mastercard"></i></span>
+                    <span><i class="fa-brands fa-paypal"></i></span>
+                    <span><i class="fa-brands fa-apple-pay"></i></span>
+                </div>
             </div>
             <div class="footer-links">
-                <h4>Enlaces Útiles</h4>
+                <h4>Categorías</h4>
                 <ul>
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#catalogo">Catálogo de Frutas</a></li>
-                    <li><a href="#licuadora">Fruti-Creador de Batidos</a></li>
-                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#catalogo">Audio & Auriculares</a></li>
+                    <li><a href="#catalogo">Carga & Baterías</a></li>
+                    <li><a href="#catalogo">Fundas & Protección</a></li>
+                    <li><a href="#catalogo">Gaming</a></li>
+                    <li><a href="#catalogo">Cables & Conectores</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="#features">Garantía</a></li>
+                    <li><a href="#features">Envíos</a></li>
+                    <li><a href="#features">Devoluciones</a></li>
+                    <li><a href="#contacto">Soporte</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
-            <div class="footer-info">
-                <h4>Métodos de Pago</h4>
-                <div class="payment-badges">
-                    <span class="payment-badge">Yape</span>
-                    <span class="payment-badge">Plin</span>
-                    <span class="payment-badge">Efectivo</span>
-                    <span class="payment-badge">Visa/Mastercard</span>
-                </div>
-                <p class="copyright">&copy; 2026 TuVecindad. Diseñado con ❤️ para la vecindad.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechZone. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- Custom Script -->
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,419 +1,424 @@
 /* ==========================================================================
-   PRODUCT DATABASE
+   PRODUCTS DATABASE
    ========================================================================== */
-const FRUITS_DATA = [
+const PRODUCTS = [
     {
-        id: "fresa",
-        name: "Fresas Orgánicas",
-        category: "berries",
-        price: 12.00,
-        unit: "kg",
-        tag: "Antioxidante",
-        emoji: "🍓",
-        image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500&auto=format&fit=crop&q=60",
-        color: "235, 77, 75", // RGB color representation for blender liquid blending
-        nutrients: { vitC: 80, energy: 35, fiber: 40 },
-        benefit: "Rica en vitamina C y antocianinas"
+        id: "airpods-pro",
+        name: "Auriculares TWS Pro",
+        category: "audio",
+        price: 89.99,
+        oldPrice: 120.00,
+        emoji: "🎧",
+        badge: "hot",
+        badgeLabel: "Más vendido",
+        rating: 4.9,
+        reviews: 324,
+        desc: "Cancelación de ruido activa, 30h batería, resistente al agua IPX5."
     },
     {
-        id: "mango",
-        name: "Mango Kent Premium",
-        category: "tropical",
-        price: 7.50,
-        unit: "kg",
-        tag: "Dulce & Jugoso",
-        emoji: "🥭",
-        image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=500&auto=format&fit=crop&q=60",
-        color: "254, 202, 87",
-        nutrients: { vitC: 60, energy: 65, fiber: 50 },
-        benefit: "Alto contenido de vitamina A y enzimas"
+        id: "earbuds-sport",
+        name: "Earbuds Sport",
+        category: "audio",
+        price: 39.99,
+        oldPrice: null,
+        emoji: "🎵",
+        badge: "new",
+        badgeLabel: "Nuevo",
+        rating: 4.7,
+        reviews: 98,
+        desc: "Diseño ergonómico para deporte, Bluetooth 5.3 y bass potenciado."
     },
     {
-        id: "naranja",
-        name: "Naranja de Mesa",
-        category: "citrus",
-        price: 4.00,
-        unit: "kg",
-        tag: "Directo del campo",
-        emoji: "🍊",
-        image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=500&auto=format&fit=crop&q=60",
-        color: "255, 159, 67",
-        nutrients: { vitC: 95, energy: 40, fiber: 45 },
-        benefit: "Excelente fuente de hidratación y defensas"
+        id: "speaker-bt",
+        name: "Parlante Bluetooth 360°",
+        category: "audio",
+        price: 54.99,
+        oldPrice: 70.00,
+        emoji: "🔊",
+        badge: "sale",
+        badgeLabel: "-21%",
+        rating: 4.8,
+        reviews: 211,
+        desc: "Sonido 360° con 20W de potencia. Resistente al agua IPX7. 24h autonomía."
     },
     {
-        id: "kiwi",
-        name: "Kiwi Importado",
-        category: "tropical",
-        price: 15.00,
-        unit: "kg",
-        tag: "Superalimento",
-        emoji: "🥝",
-        image: "https://images.unsplash.com/photo-1585059895524-72359e061381?w=500&auto=format&fit=crop&q=60",
-        color: "46, 204, 113",
-        nutrients: { vitC: 100, energy: 45, fiber: 60 },
-        benefit: "Doble vitamina C que una naranja"
+        id: "charger-65w",
+        name: "Cargador GaN 65W",
+        category: "carga",
+        price: 34.99,
+        oldPrice: 45.00,
+        emoji: "⚡",
+        badge: "hot",
+        badgeLabel: "Top",
+        rating: 4.9,
+        reviews: 456,
+        desc: "Tecnología GaN, carga ultrarrápida. 3 puertos USB-C + USB-A. Universal."
     },
     {
-        id: "platano",
-        name: "Plátano de Seda",
-        category: "tropical",
-        price: 3.50,
-        unit: "kg",
-        tag: "Energía pura",
-        emoji: "🍌",
-        image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&auto=format&fit=crop&q=60",
-        color: "255, 234, 167",
-        nutrients: { vitC: 20, energy: 90, fiber: 55 },
-        benefit: "Rico en potasio y carbohidratos sanos"
+        id: "power-bank-20k",
+        name: "Power Bank 20,000 mAh",
+        category: "carga",
+        price: 49.99,
+        oldPrice: 65.00,
+        emoji: "🔋",
+        badge: "sale",
+        badgeLabel: "-23%",
+        rating: 4.8,
+        reviews: 287,
+        desc: "Carga rápida 22.5W, 4 puertos, pantalla LED. Carga hasta 5 dispositivos."
     },
     {
-        id: "arandanos",
-        name: "Arándanos Azules",
-        category: "berries",
-        price: 18.00,
-        unit: "kg",
-        tag: "Salud Cerebral",
-        emoji: "🫐",
-        image: "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=500&auto=format&fit=crop&q=60",
-        color: "72, 84, 96",
-        nutrients: { vitC: 45, energy: 40, fiber: 70 },
-        benefit: "Poderoso protector celular y antiinflamatorio"
+        id: "wireless-charger",
+        name: "Cargador Inalámbrico 15W",
+        category: "carga",
+        price: 24.99,
+        oldPrice: null,
+        emoji: "🔌",
+        badge: "new",
+        badgeLabel: "Nuevo",
+        rating: 4.6,
+        reviews: 134,
+        desc: "Compatible Qi universal. Carga 15W para Samsung, 12W para iPhone."
     },
     {
-        id: "sandia",
-        name: "Sandía Baby",
-        category: "melons",
-        price: 9.00,
-        unit: "und",
-        tag: "Frescura Máxima",
-        emoji: "🍉",
-        image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&auto=format&fit=crop&q=60",
-        color: "255, 107, 129",
-        nutrients: { vitC: 30, energy: 30, fiber: 20 },
-        benefit: "92% de agua pura, altamente hidratante"
+        id: "case-iphone",
+        name: "Funda Premium iPhone",
+        category: "proteccion",
+        price: 18.99,
+        oldPrice: null,
+        emoji: "📱",
+        badge: null,
+        badgeLabel: null,
+        rating: 4.7,
+        reviews: 512,
+        desc: "Silicona MagSafe compatible. Protección grado militar, colores premium."
     },
     {
-        id: "pina",
-        name: "Piña Golden",
-        category: "tropical",
-        price: 6.00,
-        unit: "und",
-        tag: "Diurética",
-        emoji: "🍍",
-        image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500&auto=format&fit=crop&q=60",
-        color: "255, 211, 42",
-        nutrients: { vitC: 75, energy: 50, fiber: 65 },
-        benefit: "Contiene bromelina para mejorar la digestión"
+        id: "case-samsung",
+        name: "Funda Armor Samsung",
+        category: "proteccion",
+        price: 16.99,
+        oldPrice: null,
+        emoji: "🛡️",
+        badge: null,
+        badgeLabel: null,
+        rating: 4.6,
+        reviews: 389,
+        desc: "Carcasa doble capa, absorción de impactos. Compatible Galaxy S22/S23/S24."
     },
     {
-        id: "manzana",
-        name: "Manzana Fuji",
-        category: "sweet",
-        price: 6.50,
-        unit: "kg",
-        tag: "Saciante",
-        emoji: "🍎",
-        image: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&auto=format&fit=crop&q=60",
-        color: "255, 94, 87",
-        nutrients: { vitC: 15, energy: 50, fiber: 80 },
-        benefit: "Excelente fibra soluble (pectina)"
+        id: "tempered-glass",
+        name: "Vidrio Templado 9H Pack x3",
+        category: "proteccion",
+        price: 12.99,
+        oldPrice: 18.00,
+        emoji: "🔒",
+        badge: "sale",
+        badgeLabel: "-28%",
+        rating: 4.8,
+        reviews: 678,
+        desc: "Dureza 9H, cobertura completa, instalación sin burbujas. Pack de 3 unidades."
     },
     {
-        id: "durazno",
-        name: "Durazno Blanquillo",
-        category: "sweet",
-        price: 8.00,
-        unit: "kg",
-        tag: "Piel Sana",
-        emoji: "🍑",
-        image: "https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=500&auto=format&fit=crop&q=60",
-        color: "255, 178, 115",
-        nutrients: { vitC: 25, energy: 45, fiber: 40 },
-        benefit: "Alto contenido de betacarotenos"
+        id: "cable-usbc",
+        name: "Cable USB-C 240W 2m",
+        category: "conectividad",
+        price: 14.99,
+        oldPrice: null,
+        emoji: "🔗",
+        badge: "new",
+        badgeLabel: "USB4",
+        rating: 4.9,
+        reviews: 201,
+        desc: "Soporte 240W, 40Gbps datos, 8K video. Trenzado nylon ultra-resistente."
     },
     {
-        id: "limon",
-        name: "Limón Sutil",
-        category: "citrus",
-        price: 5.00,
-        unit: "kg",
-        tag: "Esencial",
-        emoji: "🍋",
-        image: "https://images.unsplash.com/photo-1590502593747-42a996133562?w=500&auto=format&fit=crop&q=60",
-        color: "241, 196, 15",
-        nutrients: { vitC: 90, energy: 15, fiber: 25 },
-        benefit: "Alcalinizante natural y desintoxicante"
+        id: "hub-usb",
+        name: "Hub USB-C 7 en 1",
+        category: "conectividad",
+        price: 42.99,
+        oldPrice: 55.00,
+        emoji: "🖥️",
+        badge: "hot",
+        badgeLabel: "Bestseller",
+        rating: 4.8,
+        reviews: 342,
+        desc: "HDMI 4K, USB-A x3, SD/MicroSD, USB-C PD 100W. Para Mac y PC."
     },
     {
-        id: "maracuya",
-        name: "Maracuyá Premium",
-        category: "citrus",
-        price: 6.00,
-        unit: "kg",
-        tag: "Relajante",
-        emoji: "🍇",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&auto=format&fit=crop&q=60",
-        color: "186, 220, 88",
-        nutrients: { vitC: 50, energy: 60, fiber: 75 },
-        benefit: "Rico en nutrientes y ayuda a calmar el estrés"
+        id: "adaptador-hdmi",
+        name: "Adaptador USB-C a HDMI 4K",
+        category: "conectividad",
+        price: 19.99,
+        oldPrice: 27.00,
+        emoji: "📺",
+        badge: "sale",
+        badgeLabel: "-26%",
+        rating: 4.7,
+        reviews: 167,
+        desc: "Salida 4K@60Hz, plug & play, compatible MacBook, iPad Pro, Windows."
+    },
+    {
+        id: "mouse-gaming",
+        name: "Mouse Gaming 16000 DPI",
+        category: "gaming",
+        price: 59.99,
+        oldPrice: 79.00,
+        emoji: "🖱️",
+        badge: "hot",
+        badgeLabel: "Gamer",
+        rating: 4.9,
+        reviews: 445,
+        desc: "16,000 DPI, RGB personalizable, 8 botones programables, polling 1000Hz."
+    },
+    {
+        id: "teclado-mecanico",
+        name: "Teclado Mecánico RGB TKL",
+        category: "gaming",
+        price: 79.99,
+        oldPrice: 110.00,
+        emoji: "⌨️",
+        badge: "sale",
+        badgeLabel: "-27%",
+        rating: 4.8,
+        reviews: 298,
+        desc: "Switches Red lineales, RGB por tecla, formato TKL sin numpad, anti-ghosting."
+    },
+    {
+        id: "headset-gaming",
+        name: "Headset Gaming 7.1 Surround",
+        category: "gaming",
+        price: 49.99,
+        oldPrice: null,
+        emoji: "🎮",
+        badge: "new",
+        badgeLabel: "7.1",
+        rating: 4.7,
+        reviews: 183,
+        desc: "Sonido surround 7.1 virtual, micrófono cancelación de ruido, compatible PC/PS/Xbox."
+    },
+    {
+        id: "mousepad-xl",
+        name: "Mousepad XXL RGB 90x40cm",
+        category: "gaming",
+        price: 27.99,
+        oldPrice: 35.00,
+        emoji: "🎯",
+        badge: null,
+        badgeLabel: null,
+        rating: 4.6,
+        reviews: 234,
+        desc: "Superficie de tela premium, base antideslizante, borde cosido, iluminación RGB."
     }
 ];
 
 /* ==========================================================================
-   APP STATE
+   STATE
    ========================================================================== */
-let cart = JSON.parse(localStorage.getItem('tuvecindad_cart')) || [];
+let cart = JSON.parse(localStorage.getItem('techzone_cart')) || [];
 let activeFilter = 'all';
 let searchQuery = '';
 let discountApplied = false;
-const DISCOUNT_CODE = "VECINO10";
-const DISCOUNT_RATE = 0.10;
-
-// Blender selected fruits
-let selectedBlenderFruits = [];
+const PROMO_CODE = 'TECH15';
+const DISCOUNT = 0.15;
 
 /* ==========================================================================
-   DOM ELEMENTS
+   DOM REFERENCES
    ========================================================================== */
-// Header / Nav
-const themeToggle = document.getElementById('theme-toggle');
-const cartToggleBtn = document.getElementById('cart-toggle-btn');
-const mobileToggle = document.getElementById('mobile-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const cartBadge = document.getElementById('cart-badge');
+const themeToggleBtn    = document.getElementById('theme-toggle');
+const mobileToggleBtn   = document.getElementById('mobile-toggle');
+const navMenu           = document.getElementById('nav-menu');
+const navLinks          = document.querySelectorAll('.nav-link');
+const cartToggleBtn     = document.getElementById('cart-toggle-btn');
+const cartBadge         = document.getElementById('cart-badge');
 
-// Catalog
-const productsGrid = document.getElementById('products-grid');
-const searchInput = document.getElementById('catalog-search');
-const filterChipsContainer = document.getElementById('category-filters');
+const catalogSearch     = document.getElementById('catalog-search');
+const categoryFilters   = document.getElementById('category-filters');
+const productsGrid      = document.getElementById('products-grid');
 
-// Blender
-const blenderIngredientsPool = document.getElementById('blender-ingredients-pool');
-const blenderDevice = document.getElementById('blender-device');
-const blenderInsideFruits = document.getElementById('blender-inside-fruits');
-const blenderLiquid = document.getElementById('blender-liquid');
-const btnBlend = document.getElementById('btn-blend');
-const btnResetBlender = document.getElementById('btn-reset-blender');
-const vitCBar = document.getElementById('vit-c-bar');
-const vitCVal = document.getElementById('vit-c-val');
-const energyBar = document.getElementById('energy-bar');
-const energyVal = document.getElementById('energy-val');
-const fiberBar = document.getElementById('fiber-bar');
-const fiberVal = document.getElementById('fiber-val');
-const recipeEmpty = document.getElementById('recipe-empty');
-const recipeContent = document.getElementById('recipe-content');
-const recipeTitle = document.getElementById('recipe-title');
-const recipeDesc = document.getElementById('recipe-desc');
-const btnAddSmoothieCart = document.getElementById('btn-add-smoothie-cart');
+const cartOverlay       = document.getElementById('cart-overlay');
+const cartDrawer        = document.getElementById('cart-drawer');
+const closeCartBtn      = document.getElementById('close-cart-btn');
+const cartEmpty         = document.getElementById('cart-empty');
+const cartItemsEl       = document.getElementById('cart-items');
+const cartFooter        = document.getElementById('cart-footer');
+const cartSubtotal      = document.getElementById('cart-subtotal');
+const cartDiscount      = document.getElementById('cart-discount');
+const cartTotal         = document.getElementById('cart-total');
+const promoRow          = document.getElementById('promo-row');
+const promoInput        = document.getElementById('promo-input');
+const btnApplyPromo     = document.getElementById('btn-apply-promo');
+const checkoutName      = document.getElementById('checkout-name');
+const checkoutAddress   = document.getElementById('checkout-address');
+const checkoutPayment   = document.getElementById('checkout-payment');
+const btnCheckout       = document.getElementById('btn-checkout');
+const btnCartShop       = document.getElementById('btn-cart-shop');
+const contactForm       = document.getElementById('contact-form');
+const toastContainer    = document.getElementById('toast-container');
 
-// Cart Drawer
-const cartDrawer = document.getElementById('cart-drawer');
-const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
-const closeCartBtn = document.getElementById('close-cart-btn');
-const cartItemsContainer = document.getElementById('cart-items');
-const cartEmptyElement = document.getElementById('cart-empty');
-const cartDrawerFooter = document.getElementById('cart-drawer-footer');
-const cartSubtotalElement = document.getElementById('cart-subtotal');
-const cartDiscountElement = document.getElementById('cart-discount');
-const cartTotalElement = document.getElementById('cart-total');
-const promoRow = document.getElementById('promo-row');
-const promoCodeInput = document.getElementById('promo-code-input');
-const btnApplyPromo = document.getElementById('btn-apply-promo');
-const checkoutName = document.getElementById('checkout-name');
-const checkoutAddress = document.getElementById('checkout-address');
-const checkoutPayment = document.getElementById('checkout-payment');
-const btnCheckoutWhatsapp = document.getElementById('btn-checkout-whatsapp');
-const btnCartShopNow = document.getElementById('btn-cart-shop-now');
-
-// Contact & Toast
-const contactForm = document.getElementById('contact-form');
-const toastContainer = document.getElementById('toast-container');
-
-// Testimonials Slider
-const testimonials = document.querySelectorAll('.testimonial-card');
-const sliderPrev = document.getElementById('slider-prev');
-const sliderNext = document.getElementById('slider-next');
-const sliderDotsContainer = document.getElementById('slider-dots');
-let currentTestimonialIndex = 0;
-let testimonialInterval;
+const sliderPrev        = document.getElementById('slider-prev');
+const sliderNext        = document.getElementById('slider-next');
+const sliderDots        = document.getElementById('slider-dots');
+const testimonials      = document.querySelectorAll('.testimonial-card');
+let currentSlide = 0;
+let sliderInterval;
 
 /* ==========================================================================
-   INITIALIZATION
+   INIT
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
-    renderCatalog();
-    renderBlenderSelector();
+    renderProducts();
     updateCartUI();
-    initTestimonialsSlider();
-    setupEventListeners();
+    initSlider();
+    bindEvents();
 });
 
 /* ==========================================================================
-   THEME MANAGER (Light/Dark Mode)
+   THEME
    ========================================================================== */
 function initTheme() {
-    const savedTheme = localStorage.getItem('tuvecindad_theme') || 'light';
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        document.body.classList.remove('light-theme');
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    } else {
-        document.body.classList.add('light-theme');
-        document.body.classList.remove('dark-theme');
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    }
+    const saved = localStorage.getItem('techzone_theme') || 'light';
+    applyTheme(saved);
+}
+
+function applyTheme(theme) {
+    document.body.classList.toggle('dark-theme', theme === 'dark');
+    document.body.classList.toggle('light-theme', theme === 'light');
+    themeToggleBtn.innerHTML = theme === 'dark'
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+    localStorage.setItem('techzone_theme', theme);
 }
 
 function toggleTheme() {
-    if (document.body.classList.contains('light-theme')) {
-        document.body.classList.remove('light-theme');
-        document.body.classList.add('dark-theme');
-        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        localStorage.setItem('tuvecindad_theme', 'dark');
-        showToast("¡Modo Oscuro activado!", "info");
-    } else {
-        document.body.classList.remove('dark-theme');
-        document.body.classList.add('light-theme');
-        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        localStorage.setItem('tuvecindad_theme', 'light');
-        showToast("¡Modo Claro activado!", "info");
-    }
+    const isDark = document.body.classList.contains('dark-theme');
+    applyTheme(isDark ? 'light' : 'dark');
+    showToast(isDark ? 'Modo claro activado' : 'Modo oscuro activado', 'info');
 }
 
 /* ==========================================================================
-   TOAST SYSTEM
+   TOAST
    ========================================================================== */
-function showToast(message, type = "success") {
+function showToast(message, type = 'success') {
+    const icons = {
+        success: '<i class="fa-solid fa-circle-check toast-icon-success"></i>',
+        error:   '<i class="fa-solid fa-circle-xmark toast-icon-error"></i>',
+        info:    '<i class="fa-solid fa-circle-info toast-icon-info"></i>'
+    };
     const toast = document.createElement('div');
-    toast.className = `toast ${type === 'accent' ? 'toast-accent' : ''}`;
-    
-    let iconHTML = '<i class="fa-solid fa-circle-check toast-icon"></i>';
-    if (type === 'error') {
-        iconHTML = '<i class="fa-solid fa-circle-exclamation toast-icon"></i>';
-    } else if (type === 'info') {
-        iconHTML = '<i class="fa-solid fa-circle-info toast-icon"></i>';
-    }
-    
-    toast.innerHTML = `
-        ${iconHTML}
-        <span class="toast-message">${message}</span>
-    `;
-    
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `${icons[type] || icons.info}<span class="toast-msg">${message}</span>`;
     toastContainer.appendChild(toast);
-    
-    // Auto-remove after 3.5 seconds
+
     setTimeout(() => {
-        toast.style.animation = 'toast-slide-in 0.4s ease reverse';
-        setTimeout(() => {
-            toast.remove();
-        }, 400);
-    }, 3500);
+        toast.style.animation = 'toast-in 0.3s ease reverse';
+        setTimeout(() => toast.remove(), 300);
+    }, 3200);
 }
 
 /* ==========================================================================
-   CATALOG RENDER & FILTER
+   CATALOG
    ========================================================================== */
-function renderCatalog() {
+function renderProducts() {
     productsGrid.innerHTML = '';
-    
-    const filteredFruits = FRUITS_DATA.filter(fruit => {
-        const matchesCategory = activeFilter === 'all' || fruit.category === activeFilter;
-        const matchesSearch = fruit.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                              fruit.benefit.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
+
+    const filtered = PRODUCTS.filter(p => {
+        const matchCat   = activeFilter === 'all' || p.category === activeFilter;
+        const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchCat && matchSearch;
     });
 
-    if (filteredFruits.length === 0) {
+    if (filtered.length === 0) {
         productsGrid.innerHTML = `
-            <div class="no-products text-center" style="grid-column: 1 / -1; padding: 40px; color: var(--text-light);">
-                <i class="fa-solid fa-circle-info" style="font-size: 2.5rem; margin-bottom: 12px;"></i>
-                <p>No encontramos frutas con ese nombre en la vecindad. ¡Intenta con otra búsqueda!</p>
-            </div>
-        `;
+            <div class="no-results">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>No encontramos productos con esa búsqueda. ¡Intentá con otro término!</p>
+            </div>`;
         return;
     }
 
-    filteredFruits.forEach(fruit => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.innerHTML = `
-            <span class="product-tag">${fruit.tag}</span>
-            <div class="product-image-container">
-                <img src="${fruit.image}" alt="${fruit.name}" loading="lazy">
-            </div>
+    filtered.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        const badgeHTML = product.badge
+            ? `<span class="product-badge badge-${product.badge}">${product.badgeLabel}</span>`
+            : '';
+
+        const oldPriceHTML = product.oldPrice
+            ? `<span class="product-old-price">$${product.oldPrice.toFixed(2)}</span>`
+            : '';
+
+        const catLabels = {
+            audio: 'Audio',
+            carga: 'Carga & Energía',
+            proteccion: 'Protección',
+            conectividad: 'Conectividad',
+            gaming: 'Gaming'
+        };
+
+        card.innerHTML = `
+            ${badgeHTML}
+            <div class="product-image">${product.emoji}</div>
             <div class="product-info">
-                <h3>${fruit.emoji} ${fruit.name}</h3>
-                <p class="product-benefit"><i class="fa-solid fa-circle-check"></i> ${fruit.benefit}</p>
-                <div class="product-meta">
-                    <div class="product-price-wrapper">
-                        <span class="product-price">S/ ${fruit.price.toFixed(2)}</span>
-                        <span class="product-unit">por ${fruit.unit}</span>
+                <span class="product-category">${catLabels[product.category] || product.category}</span>
+                <h3>${product.name}</h3>
+                <p class="product-desc">${product.desc}</p>
+                <div class="product-rating">
+                    <span class="stars">${'★'.repeat(Math.round(product.rating))}</span>
+                    <span>${product.rating}</span>
+                    <span class="count">(${product.reviews})</span>
+                </div>
+                <div class="product-footer">
+                    <div class="price-wrap">
+                        ${oldPriceHTML}
+                        <span class="product-price">$${product.price.toFixed(2)}</span>
                     </div>
-                    <button class="add-to-cart-btn" data-id="${fruit.id}" aria-label="Añadir ${fruit.name} al carrito">
+                    <button class="add-to-cart-btn" data-id="${product.id}" aria-label="Agregar al carrito">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
-            </div>
-        `;
-        productsGrid.appendChild(productCard);
+            </div>`;
+
+        productsGrid.appendChild(card);
     });
 
-    // Rebind add to cart click listeners
-    const addBtns = productsGrid.querySelectorAll('.add-to-cart-btn');
-    addBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const id = btn.getAttribute('data-id');
-            addToCart(id);
-            triggerCartBtnAnimation();
+    // Bind add-to-cart buttons
+    productsGrid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            addToCart(btn.getAttribute('data-id'));
+            animateCartBtn();
         });
     });
-}
-
-// Bounce cart button when adding item
-function triggerCartBtnAnimation() {
-    cartToggleBtn.classList.add('cart-added-shake');
-    setTimeout(() => {
-        cartToggleBtn.classList.remove('cart-added-shake');
-    }, 500);
 }
 
 /* ==========================================================================
-   CART LOGIC & WHATSAPP CHECKOUT
+   CART LOGIC
    ========================================================================== */
 function addToCart(productId) {
-    const fruit = FRUITS_DATA.find(item => item.id === productId);
-    if (!fruit) return;
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
 
-    const existingItem = cart.find(item => item.id === productId);
-    if (existingItem) {
-        existingItem.quantity += 1;
-        showToast(`Agregaste más ${fruit.name} al carrito.`);
+    const existing = cart.find(i => i.id === productId);
+    if (existing) {
+        existing.qty += 1;
+        showToast(`+1 ${product.name}`, 'success');
     } else {
-        cart.push({
-            id: fruit.id,
-            name: fruit.name,
-            price: fruit.price,
-            unit: fruit.unit,
-            emoji: fruit.emoji,
-            image: fruit.image,
-            quantity: 1
-        });
-        showToast(`Agregaste ${fruit.name} al carrito!`);
+        cart.push({ id: product.id, name: product.name, price: product.price, emoji: product.emoji, qty: 1 });
+        showToast(`${product.name} agregado al carrito`, 'success');
     }
 
     saveCart();
     updateCartUI();
 }
 
-function updateQuantity(productId, delta) {
-    const item = cart.find(item => item.id === productId);
+function changeQty(productId, delta) {
+    const item = cart.find(i => i.id === productId);
     if (!item) return;
-
-    item.quantity += delta;
-    if (item.quantity <= 0) {
+    item.qty += delta;
+    if (item.qty <= 0) {
         removeFromCart(productId);
     } else {
         saveCart();
@@ -422,550 +427,217 @@ function updateQuantity(productId, delta) {
 }
 
 function removeFromCart(productId) {
-    const item = cart.find(item => item.id === productId);
-    cart = cart.filter(item => item.id !== productId);
-    if (item) {
-        showToast(`Eliminaste ${item.name} del carrito`, "error");
-    }
+    const item = cart.find(i => i.id === productId);
+    cart = cart.filter(i => i.id !== productId);
+    if (item) showToast(`${item.name} eliminado`, 'error');
     saveCart();
     updateCartUI();
 }
 
 function saveCart() {
-    localStorage.setItem('tuvecindad_cart', JSON.stringify(cart));
+    localStorage.setItem('techzone_cart', JSON.stringify(cart));
 }
 
 function updateCartUI() {
-    // Update count Badge
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = cart.reduce((s, i) => s + i.qty, 0);
     cartBadge.textContent = totalItems;
-    cartBadge.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        cartBadge.style.transform = 'scale(1)';
-    }, 200);
 
     if (cart.length === 0) {
-        cartEmptyElement.classList.remove('hidden');
-        cartItemsContainer.classList.add('hidden');
-        cartDrawerFooter.classList.add('hidden');
-    } else {
-        cartEmptyElement.classList.add('hidden');
-        cartItemsContainer.classList.remove('hidden');
-        cartDrawerFooter.classList.remove('hidden');
-
-        // Render line items
-        cartItemsContainer.innerHTML = '';
-        cart.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'cart-item';
-            itemElement.innerHTML = `
-                <div class="cart-item-image">
-                    <img src="${item.image}" alt="${item.name}">
-                </div>
-                <div class="cart-item-details">
-                    <h4>${item.emoji} ${item.name}</h4>
-                    <span class="cart-item-price">S/ ${(item.price * item.quantity).toFixed(2)}</span>
-                </div>
-                <div class="cart-item-actions">
-                    <div class="quantity-controller">
-                        <span class="quantity-btn min-btn" data-id="${item.id}">-</span>
-                        <span class="quantity-num">${item.quantity}</span>
-                        <span class="quantity-btn plus-btn" data-id="${item.id}">+</span>
-                    </div>
-                    <i class="fa-solid fa-trash remove-item-btn" data-id="${item.id}" aria-label="Eliminar item"></i>
-                </div>
-            `;
-            cartItemsContainer.appendChild(itemElement);
-        });
-
-        // Add events to quantities
-        cartItemsContainer.querySelectorAll('.min-btn').forEach(btn => {
-            btn.addEventListener('click', () => updateQuantity(btn.getAttribute('data-id'), -1));
-        });
-        cartItemsContainer.querySelectorAll('.plus-btn').forEach(btn => {
-            btn.addEventListener('click', () => updateQuantity(btn.getAttribute('data-id'), 1));
-        });
-        cartItemsContainer.querySelectorAll('.remove-item-btn').forEach(btn => {
-            btn.addEventListener('click', () => removeFromCart(btn.getAttribute('data-id')));
-        });
-
-        // Calculate pricing
-        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        let discount = 0;
-        
-        if (discountApplied) {
-            discount = subtotal * DISCOUNT_RATE;
-            promoRow.classList.remove('hidden');
-            cartDiscountElement.textContent = `- S/ ${discount.toFixed(2)}`;
-        } else {
-            promoRow.classList.add('hidden');
-        }
-
-        const total = subtotal - discount;
-        cartSubtotalElement.textContent = `S/ ${subtotal.toFixed(2)}`;
-        cartTotalElement.textContent = `S/ ${total.toFixed(2)}`;
+        cartEmpty.classList.remove('hidden');
+        cartItemsEl.classList.add('hidden');
+        cartFooter.classList.add('hidden');
+        return;
     }
+
+    cartEmpty.classList.add('hidden');
+    cartItemsEl.classList.remove('hidden');
+    cartFooter.classList.remove('hidden');
+
+    cartItemsEl.innerHTML = '';
+    cart.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'cart-item';
+        el.innerHTML = `
+            <div class="cart-item-img">${item.emoji}</div>
+            <div class="cart-item-info">
+                <h4>${item.name}</h4>
+                <span class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+            <div class="cart-item-actions">
+                <div class="qty-control">
+                    <span class="qty-btn minus-btn" data-id="${item.id}">−</span>
+                    <span class="qty-num">${item.qty}</span>
+                    <span class="qty-btn plus-btn" data-id="${item.id}">+</span>
+                </div>
+                <i class="fa-solid fa-trash remove-btn" data-id="${item.id}"></i>
+            </div>`;
+        cartItemsEl.appendChild(el);
+    });
+
+    cartItemsEl.querySelectorAll('.minus-btn').forEach(b => b.addEventListener('click', () => changeQty(b.dataset.id, -1)));
+    cartItemsEl.querySelectorAll('.plus-btn').forEach(b  => b.addEventListener('click', () => changeQty(b.dataset.id, 1)));
+    cartItemsEl.querySelectorAll('.remove-btn').forEach(b => b.addEventListener('click', () => removeFromCart(b.dataset.id)));
+
+    const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    let discount = 0;
+
+    if (discountApplied) {
+        discount = subtotal * DISCOUNT;
+        promoRow.classList.remove('hidden');
+        cartDiscount.textContent = `-$${discount.toFixed(2)}`;
+    } else {
+        promoRow.classList.add('hidden');
+    }
+
+    cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+    cartTotal.textContent    = `$${(subtotal - discount).toFixed(2)}`;
 }
 
-function applyCoupon() {
-    const inputVal = promoCodeInput.value.trim().toUpperCase();
-    if (inputVal === DISCOUNT_CODE) {
+function applyPromo() {
+    if (promoInput.value.trim().toUpperCase() === PROMO_CODE) {
         discountApplied = true;
-        showToast("Cupón aplicado: ¡Descuento de Vecino del 10%!", "success");
+        showToast('¡Cupón TECH15 aplicado! 15% de descuento', 'success');
         updateCartUI();
     } else {
-        showToast("Código de descuento inválido", "error");
+        showToast('Código de descuento incorrecto', 'error');
     }
 }
 
-function processCheckout() {
-    const name = checkoutName.value.trim();
+function checkout() {
+    const name    = checkoutName.value.trim();
     const address = checkoutAddress.value.trim();
     const payment = checkoutPayment.value;
 
     if (!name || !address) {
-        showToast("Por favor complete su nombre y dirección de entrega.", "error");
+        showToast('Completá tu nombre y dirección de entrega', 'error');
         return;
     }
 
-    // Build the message
-    let message = `*🍊 PEDIDO NUEVO - TUVECINDAD 🍉*\n\n`;
-    message += `*Cliente:* ${name}\n`;
-    message += `*Dirección:* ${address}\n`;
-    message += `*Método de Pago:* ${payment}\n`;
-    message += `-------------------------------------------\n`;
-    
+    const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    const discount = discountApplied ? subtotal * DISCOUNT : 0;
+    const total    = subtotal - discount;
+
+    let msg = `*🛒 NUEVO PEDIDO — TECHZONE*\n\n`;
+    msg += `👤 *Cliente:* ${name}\n`;
+    msg += `📍 *Dirección:* ${address}\n`;
+    msg += `💳 *Pago:* ${payment}\n`;
+    msg += `─────────────────────────\n`;
+
     cart.forEach(item => {
-        const itemTotal = (item.price * item.quantity).toFixed(2);
-        message += `• ${item.emoji} ${item.name} (${item.quantity} x S/ ${item.price.toFixed(2)}) = *S/ ${itemTotal}*\n`;
+        msg += `• ${item.emoji} ${item.name} x${item.qty} = *$${(item.price * item.qty).toFixed(2)}*\n`;
     });
 
-    message += `-------------------------------------------\n`;
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    message += `*Subtotal:* S/ ${subtotal.toFixed(2)}\n`;
+    msg += `─────────────────────────\n`;
+    msg += `*Subtotal:* $${subtotal.toFixed(2)}\n`;
+    if (discountApplied) msg += `*Descuento (TECH15):* -$${discount.toFixed(2)}\n`;
+    msg += `*TOTAL: $${total.toFixed(2)}*\n\n`;
+    msg += `¡Hola TechZone! Quiero coordinar mi pedido. 🙌`;
 
-    if (discountApplied) {
-        const discount = subtotal * DISCOUNT_RATE;
-        message += `*Descuento (VECINO10):* - S/ ${discount.toFixed(2)}\n`;
-        message += `*Total Neto:* *S/ ${(subtotal - discount).toFixed(2)}*\n`;
-    } else {
-        message += `*Total Neto:* *S/ ${subtotal.toFixed(2)}*\n`;
-    }
+    const url = `https://wa.me/51987654321?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
 
-    message += `\n¡Hola! Quisiera coordinar el despacho y pago de mi pedido. Quedo atento.`;
-
-    // Encode URL
-    const whatsappUrl = `https://wa.me/51987654321?text=${encodeURIComponent(message)}`;
-    
-    // Open Whatsapp
-    window.open(whatsappUrl, '_blank');
-    
-    // Optional: Clear cart after order coordination
     cart = [];
     discountApplied = false;
-    promoCodeInput.value = '';
+    promoInput.value = '';
     checkoutName.value = '';
     checkoutAddress.value = '';
     saveCart();
     updateCartUI();
     closeCart();
-    
-    showToast("Pedido enviado. Redirigiendo a WhatsApp...", "accent");
+    showToast('¡Pedido enviado! Redirigiendo a WhatsApp...', 'info');
 }
 
-function openCart() {
-    cartDrawer.classList.add('active');
-    cartDrawerOverlay.classList.add('active');
-}
+function openCart()  { cartDrawer.classList.add('active');    cartOverlay.classList.add('active');    }
+function closeCart() { cartDrawer.classList.remove('active'); cartOverlay.classList.remove('active'); }
 
-function closeCart() {
-    cartDrawer.classList.remove('active');
-    cartDrawerOverlay.classList.remove('active');
+function animateCartBtn() {
+    cartToggleBtn.classList.add('cart-anim');
+    setTimeout(() => cartToggleBtn.classList.remove('cart-anim'), 450);
 }
 
 /* ==========================================================================
-   SMOOTHIE MAKER INTERACTIVITY (Blender)
+   SLIDER
    ========================================================================== */
-function renderBlenderSelector() {
-    blenderIngredientsPool.innerHTML = '';
-    
-    // Only display select few fruits in blender pool that are highly nutritious and make great combinations
-    const blenderFruits = FRUITS_DATA.filter(f => ['fresa', 'mango', 'naranja', 'kiwi', 'platano', 'arandanos', 'pina', 'sandia'].includes(f.id));
-    
-    blenderFruits.forEach(fruit => {
-        const chip = document.createElement('button');
-        chip.className = 'ingredient-chip';
-        chip.setAttribute('data-id', fruit.id);
-        chip.innerHTML = `
-            <span>${fruit.emoji} ${fruit.name.split(' ')[0]}</span>
-            <span class="add-icon"><i class="fa-solid fa-plus"></i></span>
-        `;
-        
-        chip.addEventListener('click', () => toggleBlenderIngredient(fruit.id, chip));
-        blenderIngredientsPool.appendChild(chip);
-    });
-}
-
-function toggleBlenderIngredient(fruitId, chipElement) {
-    const index = selectedBlenderFruits.indexOf(fruitId);
-    
-    if (index > -1) {
-        // Remove ingredient
-        selectedBlenderFruits.splice(index, 1);
-        chipElement.classList.remove('selected');
-        chipElement.querySelector('.add-icon').innerHTML = '<i class="fa-solid fa-plus"></i>';
-        removeFruitVisual(fruitId);
-        showToast(`Removiste la fruta de la licuadora.`);
-    } else {
-        // Add ingredient (limit to 3)
-        if (selectedBlenderFruits.length >= 3) {
-            showToast("¡La licuadora ya está llena! Máximo 3 frutas.", "error");
-            return;
-        }
-        selectedBlenderFruits.push(fruitId);
-        chipElement.classList.add('selected');
-        chipElement.querySelector('.add-icon').innerHTML = '<i class="fa-solid fa-check"></i>';
-        addFruitVisual(fruitId);
-        showToast(`Agregaste la fruta a la licuadora.`);
-    }
-
-    calculateBlenderNutrition();
-}
-
-function addFruitVisual(fruitId) {
-    const fruit = FRUITS_DATA.find(f => f.id === fruitId);
-    if (!fruit) return;
-
-    const fruitElement = document.createElement('span');
-    fruitElement.className = 'bfruit';
-    fruitElement.setAttribute('data-id', fruitId);
-    fruitElement.textContent = fruit.emoji;
-    
-    // Random position inside the jar
-    const randomLeft = 20 + Math.random() * 50; // Between 20% and 70%
-    const randomBottom = 20 + Math.random() * 60; // Between 20px and 80px
-    const randomRotate = Math.random() * 360;
-
-    fruitElement.style.left = `${randomLeft}%`;
-    fruitElement.style.bottom = `${randomBottom}px`;
-    fruitElement.style.transform = `rotate(${randomRotate}deg)`;
-
-    blenderInsideFruits.appendChild(fruitElement);
-    
-    // Change liquid color based on current mix
-    updateLiquidColor();
-    
-    // Increase liquid visual slightly
-    const heightPercentage = selectedBlenderFruits.length * 15;
-    blenderLiquid.style.height = `${heightPercentage}%`;
-}
-
-function removeFruitVisual(fruitId) {
-    const fruitElements = blenderInsideFruits.querySelectorAll(`.bfruit[data-id="${fruitId}"]`);
-    if (fruitElements.length > 0) {
-        // Remove the last added visual element matching this fruit ID
-        fruitElements[fruitElements.length - 1].remove();
-    }
-    
-    // Change liquid color
-    updateLiquidColor();
-    
-    // Decrease liquid visual
-    const heightPercentage = selectedBlenderFruits.length * 15;
-    blenderLiquid.style.height = `${heightPercentage}%`;
-}
-
-function updateLiquidColor() {
-    if (selectedBlenderFruits.length === 0) {
-        blenderLiquid.style.backgroundColor = 'transparent';
-        return;
-    }
-
-    // Average colors of selected fruits
-    let r = 0, g = 0, b = 0;
-    selectedBlenderFruits.forEach(id => {
-        const fruit = FRUITS_DATA.find(f => f.id === id);
-        if (fruit) {
-            const rgbValues = fruit.color.split(',');
-            r += parseInt(rgbValues[0]);
-            g += parseInt(rgbValues[1]);
-            b += parseInt(rgbValues[2]);
-        }
-    });
-
-    const count = selectedBlenderFruits.length;
-    const avgR = Math.round(r / count);
-    const avgG = Math.round(g / count);
-    const avgB = Math.round(b / count);
-
-    // Apply color to liquid with transparency
-    blenderLiquid.style.backgroundColor = `rgba(${avgR}, ${avgG}, ${avgB}, 0.55)`;
-}
-
-function calculateBlenderNutrition() {
-    if (selectedBlenderFruits.length === 0) {
-        vitCBar.style.width = '0%';
-        vitCVal.textContent = '0%';
-        energyBar.style.width = '0%';
-        energyVal.textContent = '0%';
-        fiberBar.style.width = '0%';
-        fiberVal.textContent = '0%';
-        
-        recipeEmpty.classList.remove('hidden');
-        recipeContent.classList.add('hidden');
-        return;
-    }
-
-    // Sum nutrients and cap at 100%
-    let totalC = 0, totalEnergy = 0, totalFiber = 0;
-    selectedBlenderFruits.forEach(id => {
-        const fruit = FRUITS_DATA.find(f => f.id === id);
-        if (fruit) {
-            totalC += fruit.nutrients.vitC;
-            totalEnergy += fruit.nutrients.energy;
-            totalFiber += fruit.nutrients.fiber;
-        }
-    });
-
-    // Divide by selected fruit count for averages, plus a small variety bonus
-    const count = selectedBlenderFruits.length;
-    const bonus = count > 1 ? (count * 8) : 0; // Bonus for mixing variety
-
-    const finalC = Math.min(Math.round((totalC / count) + bonus), 100);
-    const finalEnergy = Math.min(Math.round((totalEnergy / count) + bonus), 100);
-    const finalFiber = Math.min(Math.round((totalFiber / count) + bonus), 100);
-
-    // Update Dashboard UI
-    vitCBar.style.width = `${finalC}%`;
-    vitCVal.textContent = `${finalC}%`;
-    energyBar.style.width = `${finalEnergy}%`;
-    energyVal.textContent = `${finalEnergy}%`;
-    fiberBar.style.width = `${finalFiber}%`;
-    fiberVal.textContent = `${finalFiber}%`;
-}
-
-function mixSmoothie() {
-    if (selectedBlenderFruits.length === 0) {
-        showToast("¡Por favor, agrega al menos una fruta a la licuadora primero!", "error");
-        return;
-    }
-
-    // Add blending class for animations
-    blenderDevice.classList.add('blending');
-    btnBlend.textContent = "LICUANDO...";
-    
-    // Raise liquid level during blend
-    blenderLiquid.style.height = '75%';
-
-    showToast("¡Licuando tu combinación de frutas...!", "info");
-
-    setTimeout(() => {
-        // Stop blending animations
-        blenderDevice.classList.remove('blending');
-        btnBlend.textContent = "LICUAR";
-        blenderLiquid.style.height = '60%'; // settles back down
-
-        // Generate recipe based on selection
-        generateRecipeName();
-    }, 2800);
-}
-
-function generateRecipeName() {
-    const fruits = selectedBlenderFruits.map(id => FRUITS_DATA.find(f => f.id === id));
-    
-    let title = "";
-    let desc = "";
-    
-    const fruitNames = fruits.map(f => f.name.split(' ')[0]).join(' y ');
-
-    // Match recipe configurations
-    const hasCitrus = fruits.some(f => f.category === 'citrus');
-    const hasBerries = fruits.some(f => f.category === 'berries');
-    const hasBanana = selectedBlenderFruits.includes('platano');
-    const hasMango = selectedBlenderFruits.includes('mango');
-
-    if (fruits.length === 1) {
-        title = `Zumo Puro de ${fruits[0].name.split(' ')[0]}`;
-        desc = `Disfruta el sabor 100% natural y concentrado de esta fruta de la vecindad. Un clásico repleto de beneficios.`;
-    } else if (hasCitrus && hasBerries) {
-        title = "Batido Antioxidante Inmuno-C";
-        desc = `Una poderosa fusión cítrica y de bayas con un impulso masivo de vitamina C para fortalecer tus defensas. (${fruitNames}).`;
-    } else if (hasBanana && hasMango) {
-        title = "Super Combustible Tropical";
-        desc = `Batido sumamente cremoso, perfecto para tomar antes de entrenar o como desayuno rápido y energizante. (${fruitNames}).`;
-    } else if (hasBerries && hasBanana) {
-        title = "Fresa & Plátano Velvet";
-        desc = `El balance perfecto de cremosidad y acidez natural. Encantador para niños y deportistas. (${fruitNames}).`;
-    } else if (fruits.length === 3) {
-        title = "El Especial de la Vecindad";
-        desc = `Nuestra mezcla triple estrella. Con un equilibrio fantástico de antioxidantes, hidratación y fibra para el día a día. (${fruitNames}).`;
-    } else {
-        title = "Cóctel Refrescante Vecinal";
-        desc = `Combinación deliciosa y ligera de frutas de temporada ideal para un día caluroso. (${fruitNames}).`;
-    }
-
-    // Show Recipe content
-    recipeTitle.textContent = title;
-    recipeDesc.textContent = desc;
-    recipeEmpty.classList.add('hidden');
-    recipeContent.classList.remove('hidden');
-    
-    showToast("¡Batido listo para servir!", "success");
-}
-
-function addSmoothieComboToCart() {
-    if (selectedBlenderFruits.length === 0) return;
-
-    // Add each fruit from blender directly to the shopping cart
-    selectedBlenderFruits.forEach(id => {
-        addToCart(id);
-    });
-
-    showToast("¡Se agregaron las frutas del batido a tu carrito!", "accent");
-    openCart();
-}
-
-function resetBlender() {
-    selectedBlenderFruits = [];
-    blenderInsideFruits.innerHTML = '';
-    blenderLiquid.style.height = '0%';
-    blenderLiquid.style.backgroundColor = 'transparent';
-    
-    // Reset selection chips classes
-    document.querySelectorAll('.ingredient-chip').forEach(chip => {
-        chip.classList.remove('selected');
-        chip.querySelector('.add-icon').innerHTML = '<i class="fa-solid fa-plus"></i>';
-    });
-
-    calculateBlenderNutrition();
-    showToast("Licuadora vaciada con éxito.", "info");
-}
-
-/* ==========================================================================
-   TESTIMONIALS SLIDER
-   ========================================================================== */
-function initTestimonialsSlider() {
-    // Generate navigation dots
-    sliderDotsContainer.innerHTML = '';
-    testimonials.forEach((_, idx) => {
+function initSlider() {
+    sliderDots.innerHTML = '';
+    testimonials.forEach((_, i) => {
         const dot = document.createElement('div');
-        dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-        dot.addEventListener('click', () => showTestimonial(idx));
-        sliderDotsContainer.appendChild(dot);
+        dot.className = `dot${i === 0 ? ' active' : ''}`;
+        dot.addEventListener('click', () => goToSlide(i));
+        sliderDots.appendChild(dot);
     });
-
-    startSliderAutoplay();
+    startSliderAuto();
 }
 
-function showTestimonial(index) {
+function goToSlide(index) {
     testimonials.forEach(t => t.classList.remove('active'));
-    
-    // Handle wrap-around
-    if (index >= testimonials.length) {
-        currentTestimonialIndex = 0;
-    } else if (index < 0) {
-        currentTestimonialIndex = testimonials.length - 1;
-    } else {
-        currentTestimonialIndex = index;
-    }
-
-    testimonials[currentTestimonialIndex].classList.add('active');
-    
-    // Update dots
-    const dots = sliderDotsContainer.querySelectorAll('.dot');
-    dots.forEach((dot, idx) => {
-        if (idx === currentTestimonialIndex) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
-
-    // Reset autoplay interval
-    startSliderAutoplay();
+    currentSlide = (index + testimonials.length) % testimonials.length;
+    testimonials[currentSlide].classList.add('active');
+    sliderDots.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    startSliderAuto();
 }
 
-function startSliderAutoplay() {
-    clearInterval(testimonialInterval);
-    testimonialInterval = setInterval(() => {
-        showTestimonial(currentTestimonialIndex + 1);
-    }, 6000);
+function startSliderAuto() {
+    clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => goToSlide(currentSlide + 1), 5500);
 }
 
 /* ==========================================================================
-   EVENT LISTENERS SETUP
+   EVENT LISTENERS
    ========================================================================== */
-function setupEventListeners() {
-    // Theme Switcher
-    themeToggle.addEventListener('click', toggleTheme);
+function bindEvents() {
+    themeToggleBtn.addEventListener('click', toggleTheme);
 
-    // Mobile Menu Toggle
-    mobileToggle.addEventListener('click', () => {
+    mobileToggleBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        const icon = mobileToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.className = 'fa-solid fa-xmark';
-        } else {
-            icon.className = 'fa-solid fa-bars';
-        }
+        const icon = mobileToggleBtn.querySelector('i');
+        icon.className = navMenu.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     });
 
-    // Nav Links smooth close mobile menu
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            mobileToggle.querySelector('i').className = 'fa-solid fa-bars';
-            
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+            navMenu.classList.remove('active');
+            mobileToggleBtn.querySelector('i').className = 'fa-solid fa-bars';
         });
     });
 
-    // Cart Drawer Controls
     cartToggleBtn.addEventListener('click', openCart);
     closeCartBtn.addEventListener('click', closeCart);
-    cartDrawerOverlay.addEventListener('click', closeCart);
-    btnCartShopNow.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    btnCartShop && btnCartShop.addEventListener('click', closeCart);
 
-    // Coupon Code
-    btnApplyPromo.addEventListener('click', applyCoupon);
-
-    // Checkout Form
-    btnCheckoutWhatsapp.addEventListener('click', processCheckout);
-
-    // Search and Filters in Catalog
-    searchInput.addEventListener('input', (e) => {
+    catalogSearch.addEventListener('input', e => {
         searchQuery = e.target.value;
-        renderCatalog();
+        renderProducts();
     });
 
-    // Event delegation for category filter chips
-    filterChipsContainer.addEventListener('click', (e) => {
-        if (e.target.classList.contains('filter-chip')) {
-            const chips = filterChipsContainer.querySelectorAll('.filter-chip');
-            chips.forEach(c => c.classList.remove('active'));
-            
-            e.target.classList.add('active');
-            activeFilter = e.target.getAttribute('data-category');
-            renderCatalog();
-        }
+    categoryFilters.addEventListener('click', e => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        categoryFilters.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeFilter = chip.dataset.category;
+        renderProducts();
     });
 
-    // Blender interaction actions
-    btnBlend.addEventListener('click', mixSmoothie);
-    btnResetBlender.addEventListener('click', resetBlender);
-    btnAddSmoothieCart.addEventListener('click', addSmoothieComboToCart);
+    btnApplyPromo.addEventListener('click', applyPromo);
+    btnCheckout.addEventListener('click', checkout);
 
-    // Testimonial sliders
-    sliderPrev.addEventListener('click', () => showTestimonial(currentTestimonialIndex - 1));
-    sliderNext.addEventListener('click', () => showTestimonial(currentTestimonialIndex + 1));
+    sliderPrev.addEventListener('click', () => goToSlide(currentSlide - 1));
+    sliderNext.addEventListener('click', () => goToSlide(currentSlide + 1));
 
-    // Contact form submit listener
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', e => {
         e.preventDefault();
-        
         const name = document.getElementById('form-name').value;
-        showToast(`¡Gracias por escribirnos, ${name}! Te responderemos pronto.`, "success");
+        showToast(`¡Gracias ${name}! Te respondemos pronto.`, 'success');
         contactForm.reset();
+    });
+
+    // Navbar scroll shadow
+    window.addEventListener('scroll', () => {
+        document.getElementById('navbar').style.boxShadow =
+            window.scrollY > 10 ? 'var(--shadow-md)' : '';
     });
 }
