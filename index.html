@@ -3,459 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>TechZone | Accesorios de Tecnología Premium</title>
-    <meta name="description" content="TechZone — Tu tienda de accesorios tecnológicos de calidad. Auriculares, cargadores, fundas, cables y más. Envío rápido y garantía en todos los productos.">
-    <meta name="keywords" content="accesorios tecnología, auriculares, cargadores, fundas celular, cables USB, mouse, teclado, TechZone">
-    <meta name="author" content="TechZone">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="TechZone | Accesorios Tech Premium">
-    <meta property="og:description" content="Los mejores accesorios tecnológicos al mejor precio. Calidad garantizada.">
-    <meta property="og:image" content="./assets/hero.png">
+    <title>TechZone — Accesorios de Tecnología Premium</title>
+    <meta name="description" content="Compra los mejores accesorios tecnológicos. Auriculares, cargadores, fundas y más. Envío rápido a todo el Perú. Garantía oficial.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light-theme">
+<body>
 
-    <!-- Toast Notifications -->
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-inner">
+            <span>🚀 Envío gratis en compras desde <strong>S/ 150</strong></span>
+            <span class="ann-sep">·</span>
+            <span>🔒 Pago 100% seguro</span>
+            <span class="ann-sep">·</span>
+            <span>✅ Garantía 12 meses</span>
+        </div>
+    </div>
+
+    <!-- Toast -->
     <div id="toast-container" class="toast-container"></div>
 
     <!-- Navbar -->
     <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="logo-wrapper">
-                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
-                <span class="logo-text">Tech<span class="accent-text">Zone</span></span>
+        <div class="nav-wrap">
+            <!-- Logo -->
+            <a href="#" class="nav-logo">
+                <span class="logo-bolt">⚡</span>
+                <span>Tech<strong>Zone</strong></span>
             </a>
 
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <nav class="nav-menu" id="nav-menu">
-                <ul>
-                    <li><a href="#hero" class="nav-link active">Inicio</a></li>
-                    <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
-                    <li><a href="#features" class="nav-link">Beneficios</a></li>
-                    <li><a href="#testimonios" class="nav-link">Opiniones</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
+            <!-- Center Nav -->
+            <nav class="nav-links" id="nav-links">
+                <a href="#hero" class="nav-item active">Inicio</a>
+                <a href="#productos" class="nav-item">Productos</a>
+                <a href="#beneficios" class="nav-item">Beneficios</a>
+                <a href="#opiniones" class="nav-item">Opiniones</a>
+                <a href="#contacto" class="nav-item">Contacto</a>
             </nav>
 
+            <!-- Right Actions -->
             <div class="nav-actions">
-                <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                <button id="theme-toggle" class="nav-icon-btn" aria-label="Tema">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button id="cart-toggle-btn" class="icon-btn cart-btn" aria-label="Ver carrito">
+                <button id="cart-btn" class="nav-icon-btn cart-icon-btn" aria-label="Carrito">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="cart-badge" id="cart-badge">0</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-bg">
-                <div class="hero-grid-overlay"></div>
-                <div class="hero-glow glow-1"></div>
-                <div class="hero-glow glow-2"></div>
-            </div>
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        Envío gratis en pedidos +$50
-                    </div>
-                    <h1>Tecnología que <span class="gradient-text">eleva</span> tu experiencia</h1>
-                    <p class="hero-lead">Accesorios premium para todos tus dispositivos. Diseño, calidad y garantía en cada producto que elegís.</p>
-                    <div class="hero-ctas">
-                        <a href="#catalogo" class="btn btn-primary">
-                            <i class="fa-solid fa-store"></i> Ver Productos
-                        </a>
-                        <a href="#features" class="btn btn-ghost">
-                            <i class="fa-solid fa-shield-check"></i> Garantía Total
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">+5K</span>
-                            <span class="stat-label">Clientes felices</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat">
-                            <span class="stat-number">200+</span>
-                            <span class="stat-label">Productos</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat">
-                            <span class="stat-number">4.9★</span>
-                            <span class="stat-label">Calificación</span>
-                        </div>
-                    </div>
+
+        <!-- ═══════════════════ HERO ═══════════════════ -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Nueva colección 2025
                 </div>
-                <div class="hero-visual">
-                    <div class="visual-card main-card">
-                        <div class="card-glow"></div>
-                        <div class="product-showcase">
-                            <div class="showcase-icon">🎧</div>
-                            <div class="showcase-info">
-                                <h4>AirPods Pro 2</h4>
-                                <p>Cancelación de ruido activa</p>
-                                <span class="showcase-price">$89.99</span>
-                            </div>
-                        </div>
+                <h1 class="hero-title">
+                    Tecnología que<br>
+                    <span class="hero-highlight">transforma</span><br>
+                    tu día a día
+                </h1>
+                <p class="hero-sub">
+                    Accesorios premium para todos tus dispositivos. Diseño, calidad y garantía oficial en cada producto.
+                </p>
+                <div class="hero-btns">
+                    <a href="#productos" class="btn-shop">
+                        Comprar ahora <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#beneficios" class="btn-learn">
+                        Ver beneficios
+                    </a>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Envío 24–48h</span>
                     </div>
-                    <div class="visual-card mini-card card-left">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Carga Rápida 65W</span>
-                    </div>
-                    <div class="visual-card mini-card card-right">
-                        <i class="fa-solid fa-star"></i>
-                        <span>Top Ventas</span>
-                    </div>
-                    <div class="visual-card mini-card card-bottom">
+                    <div class="trust-item">
                         <i class="fa-solid fa-shield-check"></i>
-                        <span>12 meses garantía</span>
+                        <span>Garantía oficial</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>30 días devolución</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Pago seguro</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Catalog Section -->
-        <section id="catalogo" class="catalog-section">
-            <div class="section-header">
-                <span class="section-tag">Nuestro Catálogo</span>
-                <h2>Explora todos los <span class="gradient-text">accesorios</span></h2>
-                <p>Filtrá por categoría o buscá el accesorio que necesitás para tu dispositivo.</p>
-            </div>
-
-            <div class="catalog-controls">
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" id="catalog-search" placeholder="Buscar productos (ej. auriculares, cable...)">
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-glow"></div>
+                    <div class="hero-card-emoji">🎧</div>
+                    <div class="hero-card-info">
+                        <p class="card-tag">Más vendido</p>
+                        <h3>Auriculares TWS Pro</h3>
+                        <p class="card-sub">Cancelación de ruido activa</p>
+                        <div class="card-bottom">
+                            <span class="card-price">S/ 289</span>
+                            <div class="card-stars">★★★★★ <small>(324)</small></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="category-filters" id="category-filters">
-                    <button class="filter-chip active" data-category="all">
-                        <i class="fa-solid fa-th-large"></i> Todos
-                    </button>
-                    <button class="filter-chip" data-category="audio">
-                        <i class="fa-solid fa-headphones"></i> Audio
-                    </button>
-                    <button class="filter-chip" data-category="carga">
-                        <i class="fa-solid fa-bolt"></i> Carga
-                    </button>
-                    <button class="filter-chip" data-category="proteccion">
-                        <i class="fa-solid fa-mobile-screen"></i> Protección
-                    </button>
-                    <button class="filter-chip" data-category="conectividad">
-                        <i class="fa-solid fa-plug"></i> Conectividad
-                    </button>
-                    <button class="filter-chip" data-category="gaming">
-                        <i class="fa-solid fa-gamepad"></i> Gaming
-                    </button>
-                </div>
-            </div>
 
-            <div class="products-grid" id="products-grid">
-                <!-- JS renderiza las cards aquí -->
+                <div class="hero-float float-a">
+                    <i class="fa-solid fa-bolt"></i> Carga 65W
+                </div>
+                <div class="hero-float float-b">
+                    <i class="fa-solid fa-star" style="color:#f59e0b"></i> 4.9 Rating
+                </div>
+                <div class="hero-float float-c">
+                    <i class="fa-solid fa-users"></i> +5,000 clientes
+                </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="features-section">
-            <div class="section-header">
-                <span class="section-tag">¿Por qué TechZone?</span>
-                <h2>Todo lo que necesitás, <span class="gradient-text">garantizado</span></h2>
+        <!-- ═══════════════════ STATS ═══════════════════ -->
+        <section class="stats-bar">
+            <div class="stats-wrap">
+                <div class="stat-item">
+                    <span class="stat-num">+5,000</span>
+                    <span class="stat-lbl">Clientes satisfechos</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-item">
+                    <span class="stat-num">4.9 ★</span>
+                    <span class="stat-lbl">Calificación promedio</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-item">
+                    <span class="stat-num">200+</span>
+                    <span class="stat-lbl">Productos en stock</span>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat-item">
+                    <span class="stat-num">12 meses</span>
+                    <span class="stat-lbl">Garantía en todo</span>
+                </div>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+        </section>
+
+        <!-- ═══════════════════ PRODUCTOS ═══════════════════ -->
+        <section id="productos" class="products-section">
+            <div class="section-head">
+                <p class="section-label">Catálogo</p>
+                <h2 class="section-title">Nuestros productos <span class="text-grad">destacados</span></h2>
+                <p class="section-desc">Filtrá por categoría y encontrá exactamente lo que necesitás para tu dispositivo.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-row" id="filters-row">
+                <button class="filter-btn active" data-cat="all">Todos</button>
+                <button class="filter-btn" data-cat="audio">
+                    <i class="fa-solid fa-headphones"></i> Audio
+                </button>
+                <button class="filter-btn" data-cat="carga">
+                    <i class="fa-solid fa-bolt"></i> Carga
+                </button>
+                <button class="filter-btn" data-cat="proteccion">
+                    <i class="fa-solid fa-mobile-screen"></i> Protección
+                </button>
+                <button class="filter-btn" data-cat="gaming">
+                    <i class="fa-solid fa-gamepad"></i> Gaming
+                </button>
+            </div>
+
+            <!-- Search -->
+            <div class="search-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Buscar producto...">
+            </div>
+
+            <!-- Grid -->
+            <div class="products-grid" id="products-grid"></div>
+        </section>
+
+        <!-- ═══════════════════ BENEFICIOS ═══════════════════ -->
+        <section id="beneficios" class="benefits-section">
+            <div class="section-head">
+                <p class="section-label">¿Por qué TechZone?</p>
+                <h2 class="section-title">Comprá con total <span class="text-grad">confianza</span></h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-truck-fast"></i>
                     </div>
-                    <h3>Envío Ultrarrápido</h3>
-                    <p>Recibí tu pedido en 24-48 horas. Gratis en compras mayores a $50.</p>
+                    <h3>Envío ultrarrápido</h3>
+                    <p>Recibí tu pedido en 24 a 48 horas. Envío gratis en compras mayores a S/ 150 a todo el Perú.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-shield-check"></i>
                     </div>
                     <h3>Garantía de 12 meses</h3>
-                    <p>Todos nuestros productos tienen garantía oficial. Si falla, lo reemplazamos.</p>
+                    <p>Todos nuestros productos tienen garantía oficial. Si falla, lo reparamos o reemplazamos sin costo.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-rotate-left"></i>
                     </div>
-                    <h3>Devolución Fácil</h3>
-                    <p>30 días para devolver sin preguntas. Tu satisfacción es nuestra prioridad.</p>
+                    <h3>Devolución sin preguntas</h3>
+                    <p>Tenés 30 días para devolver cualquier producto. Sin complicaciones, sin preguntas innecesarias.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-lock"></i>
                     </div>
-                    <h3>Pago 100% Seguro</h3>
-                    <p>Procesamos tus pagos con encriptación SSL. Tus datos siempre protegidos.</p>
+                    <h3>Pago 100% seguro</h3>
+                    <p>Procesamos tus pagos con cifrado SSL. Tus datos personales y bancarios siempre protegidos.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-headset"></i>
                     </div>
                     <h3>Soporte 24/7</h3>
-                    <p>Nuestro equipo está disponible en todo momento para ayudarte.</p>
+                    <p>Nuestro equipo está disponible por WhatsApp para resolver cualquier duda antes y después de tu compra.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon-wrap">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fa-solid fa-award"></i>
                     </div>
-                    <h3>Marcas Oficiales</h3>
-                    <p>Solo trabajamos con distribuidores oficiales. Cero productos genéricos.</p>
+                    <h3>Marcas oficiales</h3>
+                    <p>Solo trabajamos con distribuidores autorizados. Cero imitaciones, cero genéricos. Calidad garantizada.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonios" class="testimonials-section">
-            <div class="section-header">
-                <span class="section-tag">Clientes</span>
-                <h2>Lo que dicen nuestros <span class="gradient-text">compradores</span></h2>
+        <!-- ═══════════════════ BANNER CTA ═══════════════════ -->
+        <section class="cta-banner">
+            <div class="cta-content">
+                <h2>¿Primera compra? Usá el código <span class="cta-code">TECH15</span></h2>
+                <p>Obtené un <strong>15% de descuento</strong> en tu primer pedido. Solo por tiempo limitado.</p>
+                <a href="#productos" class="btn-shop">
+                    Aprovechar oferta <i class="fa-solid fa-tag"></i>
+                </a>
             </div>
-            <div class="slider-wrapper">
-                <div class="testimonial-slider" id="testimonial-slider">
-                    <div class="testimonial-card active">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Compré unos auriculares inalámbricos y la calidad es increíble. El envío llegó al día siguiente y el empaque estaba perfecto. Totalmente recomendado."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)">J</div>
-                            <div>
-                                <h4>Juliana Torres</h4>
-                                <p>Cliente verificada</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Pedí un cargador de 65W y una funda para mi celular. Llegaron rapidísimo y la calidad es top. El precio es mucho mejor que en otras tiendas."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #0284c7)">M</div>
-                            <div>
-                                <h4>Matías Gómez</h4>
-                                <p>Cliente verificado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"El mouse gaming que compré es una bestia. Perfecto para jugar toda la noche. La atención al cliente también fue excelente cuando tuve una consulta."</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">R</div>
-                            <div>
-                                <h4>Rodrigo Herrera</h4>
-                                <p>Cliente verificado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Increíble servicio. Compré un teclado mecánico y llegó en perfectas condiciones. La garantía de 12 meses me da mucha tranquilidad. ¡Vuelvo a comprar!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">S</div>
-                            <div>
-                                <h4>Sofía Ramírez</h4>
-                                <p>Cliente verificada</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <button id="slider-prev" class="slider-arrow" aria-label="Anterior">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <div class="slider-dots" id="slider-dots"></div>
-                    <button id="slider-next" class="slider-arrow" aria-label="Siguiente">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
+            <div class="cta-decoration">
+                <span>🎧</span><span>⚡</span><span>🎮</span><span>📱</span>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ═══════════════════ OPINIONES ═══════════════════ -->
+        <section id="opiniones" class="reviews-section">
+            <div class="section-head">
+                <p class="section-label">Opiniones reales</p>
+                <h2 class="section-title">Lo que dicen nuestros <span class="text-grad">compradores</span></h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card featured">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Los auriculares llegaron en perfectas condiciones y antes de lo esperado. La calidad de sonido es increíble, vale cada sol que pagué. Definitivamente vuelvo a comprar."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">J</div>
+                        <div>
+                            <strong>Juliana Torres</strong>
+                            <span>Lima, Perú</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Compra verificada</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"El cargador GaN 65W es una bestia. Carga mi laptop y mi celular al mismo tiempo sin calentarse. Excelente relación calidad-precio."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background:linear-gradient(135deg,#06b6d4,#0284c7)">M</div>
+                        <div>
+                            <strong>Matías Gómez</strong>
+                            <span>Arequipa, Perú</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Compra verificada</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"El mouse gaming llegó bien empacado, funciona perfectamente. La atención por WhatsApp fue rapidísima. 100% recomendado para gamers."</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">R</div>
+                        <div>
+                            <strong>Rodrigo Herrera</strong>
+                            <span>Trujillo, Perú</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Compra verificada</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"El hub USB 7 en 1 transformó mi setup de trabajo. Conexión estable, no se calienta y la entrega llegó al día siguiente. ¡Increíble servicio!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar" style="background:linear-gradient(135deg,#10b981,#059669)">S</div>
+                        <div>
+                            <strong>Sofía Ramírez</strong>
+                            <span>Cusco, Perú</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Compra verificada</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating summary -->
+            <div class="rating-summary">
+                <div class="rating-big">4.9</div>
+                <div class="rating-stars-big">★★★★★</div>
+                <p>Basado en más de 1,200 reseñas verificadas</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ CONTACTO ═══════════════════ -->
         <section id="contacto" class="contact-section">
-            <div class="contact-container">
-                <div class="contact-info-panel">
-                    <span class="section-tag">Contacto</span>
-                    <h2>¿Tenés alguna <span class="gradient-text">consulta?</span></h2>
-                    <p>Estamos disponibles para ayudarte a elegir el mejor accesorio para tu dispositivo.</p>
-                    <div class="contact-list">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="section-label">Contacto</p>
+                    <h2 class="section-title">¿Tenés alguna <span class="text-grad">consulta?</span></h2>
+                    <p class="contact-sub">Respondemos en menos de 2 horas en horario comercial. También por WhatsApp las 24 horas.</p>
+
+                    <div class="contact-items">
+                        <a href="https://wa.me/51987654321" target="_blank" class="contact-item-link">
+                            <div class="contact-icon whatsapp-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
                             <div>
-                                <h4>Dirección</h4>
-                                <p>Av. Tecnología 1024, Ciudad</p>
+                                <strong>WhatsApp</strong>
+                                <span>+51 987 654 321</span>
+                            </div>
+                        </a>
+                        <div class="contact-item-link">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>ventas@techzone.pe</span>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
-                            <div>
-                                <h4>Horario</h4>
-                                <p>Lun–Sáb: 9:00 AM – 8:00 PM</p>
+                        <div class="contact-item-link">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-clock"></i>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
                             <div>
-                                <h4>WhatsApp</h4>
-                                <p>+51 987 654 321</p>
+                                <strong>Horario de atención</strong>
+                                <span>Lun–Sáb: 9:00 AM – 8:00 PM</span>
                             </div>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+
+                    <div class="social-row">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="contact-form-panel">
-                    <h3>Envianos un mensaje</h3>
-                    <p>Respondemos en menos de 2 horas en horario comercial.</p>
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form-name">Nombre</label>
-                                <input type="text" id="form-name" required placeholder="Tu nombre completo">
-                            </div>
-                            <div class="form-group">
-                                <label for="form-email">Email</label>
-                                <input type="email" id="form-email" required placeholder="tu@email.com">
-                            </div>
+
+                <form id="contact-form" class="contact-form">
+                    <h3>Envianos tu consulta</h3>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Nombre</label>
+                            <input type="text" id="f-name" required placeholder="Tu nombre">
                         </div>
-                        <div class="form-group">
-                            <label for="form-subject">Asunto</label>
-                            <input type="text" id="form-subject" placeholder="¿En qué podemos ayudarte?">
+                        <div class="form-field">
+                            <label>Email</label>
+                            <input type="email" id="f-email" required placeholder="tu@email.com">
                         </div>
-                        <div class="form-group">
-                            <label for="form-message">Mensaje</label>
-                            <textarea id="form-message" rows="4" required placeholder="Escribí tu consulta aquí..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fa-regular fa-paper-plane"></i> Enviar Mensaje
-                        </button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-field">
+                        <label>Asunto</label>
+                        <input type="text" id="f-subject" placeholder="¿En qué te ayudamos?">
+                    </div>
+                    <div class="form-field">
+                        <label>Mensaje</label>
+                        <textarea id="f-message" rows="4" required placeholder="Escribí tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-regular fa-paper-plane"></i> Enviar mensaje
+                    </button>
+                </form>
             </div>
         </section>
     </main>
 
-    <!-- Cart Drawer -->
+    <!-- ═══════════════════ CART DRAWER ═══════════════════ -->
     <div class="cart-overlay" id="cart-overlay"></div>
-    <div class="cart-drawer" id="cart-drawer">
-        <div class="cart-header">
-            <h3><i class="fa-solid fa-bag-shopping"></i> Mi Carrito</h3>
-            <button class="close-cart-btn" id="close-cart-btn" aria-label="Cerrar">
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-top">
+            <h3>🛍️ Mi carrito</h3>
+            <button id="close-cart" class="close-cart" aria-label="Cerrar">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        <div class="cart-body">
-            <div class="cart-empty" id="cart-empty">
-                <div class="cart-empty-icon">🛍️</div>
+
+        <div class="cart-body" id="cart-body">
+            <div class="cart-empty-state" id="cart-empty">
+                <div class="empty-icon">🛒</div>
                 <p>Tu carrito está vacío</p>
-                <a href="#catalogo" class="btn btn-primary btn-sm" id="btn-cart-shop">Ver productos</a>
+                <a href="#productos" id="btn-go-shop" class="btn-shop">Ver productos</a>
             </div>
-            <div class="cart-items" id="cart-items"></div>
+            <div id="cart-list" class="cart-list"></div>
         </div>
+
         <div class="cart-footer" id="cart-footer">
-            <div class="cart-summary">
-                <div class="summary-row">
+            <div class="cart-totals">
+                <div class="total-row">
                     <span>Subtotal</span>
-                    <span id="cart-subtotal">$0.00</span>
+                    <span id="cart-subtotal">S/ 0.00</span>
                 </div>
-                <div class="summary-row promo-row hidden" id="promo-row">
-                    <span>Descuento (15%)</span>
-                    <span id="cart-discount">-$0.00</span>
+                <div class="total-row discount-row hidden" id="promo-row">
+                    <span>Descuento TECH15 (15%)</span>
+                    <span id="cart-discount">– S/ 0.00</span>
                 </div>
-                <div class="summary-row total-row">
+                <div class="total-row grand-total">
                     <span>Total</span>
-                    <span id="cart-total">$0.00</span>
+                    <span id="cart-total">S/ 0.00</span>
                 </div>
             </div>
-            <div class="promo-container">
+
+            <div class="promo-box">
                 <input type="text" id="promo-input" placeholder="Código de descuento (TECH15)">
-                <button class="btn btn-outline btn-sm" id="btn-apply-promo">Aplicar</button>
+                <button id="btn-apply-promo" class="btn-apply">Aplicar</button>
             </div>
-            <div class="checkout-form">
-                <h4>Datos de entrega</h4>
-                <div class="form-group">
-                    <input type="text" id="checkout-name" placeholder="Nombre completo" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="checkout-address" placeholder="Dirección de entrega" required>
-                </div>
-                <div class="form-group">
-                    <select id="checkout-payment">
-                        <option value="Tarjeta de crédito/débito">Tarjeta de crédito/débito</option>
-                        <option value="Transferencia bancaria">Transferencia bancaria</option>
-                        <option value="Efectivo contra-entrega">Efectivo contra-entrega</option>
-                        <option value="PayPal">PayPal</option>
-                    </select>
-                </div>
+
+            <div class="checkout-fields">
+                <label>Nombre completo</label>
+                <input type="text" id="chk-name" placeholder="Tu nombre">
+                <label>Dirección de entrega</label>
+                <input type="text" id="chk-address" placeholder="Dirección, distrito, ciudad">
+                <label>Método de pago</label>
+                <select id="chk-payment">
+                    <option>Yape / Plin</option>
+                    <option>Tarjeta de crédito/débito</option>
+                    <option>Transferencia bancaria</option>
+                    <option>Efectivo contra-entrega</option>
+                </select>
             </div>
-            <button class="btn btn-whatsapp btn-block" id="btn-checkout">
+
+            <button id="btn-checkout" class="btn-checkout">
                 <i class="fa-brands fa-whatsapp"></i> Finalizar pedido por WhatsApp
             </button>
         </div>
-    </div>
+    </aside>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <div class="footer-top">
             <div class="footer-brand">
-                <div class="logo-wrapper">
-                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <span class="logo-text">Tech<span class="accent-text">Zone</span></span>
+                <div class="nav-logo" style="margin-bottom:14px">
+                    <span class="logo-bolt">⚡</span>
+                    <span>Tech<strong>Zone</strong></span>
                 </div>
-                <p>Tu tienda de accesorios tecnológicos de confianza. Calidad premium, envío rápido y garantía en cada compra.</p>
-                <div class="payment-methods">
-                    <span><i class="fa-brands fa-cc-visa"></i></span>
-                    <span><i class="fa-brands fa-cc-mastercard"></i></span>
-                    <span><i class="fa-brands fa-paypal"></i></span>
-                    <span><i class="fa-brands fa-apple-pay"></i></span>
+                <p>Tu tienda de accesorios tecnológicos de confianza. Calidad premium, garantía oficial y envío rápido a todo el Perú.</p>
+                <div class="pay-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-paypal"></i>
+                    <span class="pay-text">Yape</span>
+                    <span class="pay-text">Plin</span>
                 </div>
             </div>
-            <div class="footer-links">
+
+            <div class="footer-col">
                 <h4>Categorías</h4>
                 <ul>
-                    <li><a href="#catalogo">Audio & Auriculares</a></li>
-                    <li><a href="#catalogo">Carga & Baterías</a></li>
-                    <li><a href="#catalogo">Fundas & Protección</a></li>
-                    <li><a href="#catalogo">Gaming</a></li>
-                    <li><a href="#catalogo">Cables & Conectores</a></li>
+                    <li><a href="#productos">Auriculares & Audio</a></li>
+                    <li><a href="#productos">Carga & Baterías</a></li>
+                    <li><a href="#productos">Fundas & Protección</a></li>
+                    <li><a href="#productos">Gaming</a></li>
+                    <li><a href="#productos">Cables & Conectores</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
-                <h4>Información</h4>
+
+            <div class="footer-col">
+                <h4>Ayuda</h4>
                 <ul>
-                    <li><a href="#features">Garantía</a></li>
-                    <li><a href="#features">Envíos</a></li>
-                    <li><a href="#features">Devoluciones</a></li>
-                    <li><a href="#contacto">Soporte</a></li>
+                    <li><a href="#beneficios">Política de garantía</a></li>
+                    <li><a href="#beneficios">Envíos y tiempos</a></li>
+                    <li><a href="#beneficios">Devoluciones</a></li>
+                    <li><a href="#contacto">Soporte técnico</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 TechZone. Todos los derechos reservados.</p>
+            <p>© 2025 TechZone. Todos los derechos reservados.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </div>
     </footer>
 
